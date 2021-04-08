@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>GCloud Speech Recognition Node + Socket.io</title>
+    <meta name="description" content="Google Cloud Speech Recognition with Node and Socket.io">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+      <audio></audio>
+
+<!-- LEFT SIDE  -->
+      <div class="sides">
+        <div>******************************<br>
+          Record your voice, fill a RiMarkov with words play back the results...
+          <br>******************************************
+          </div>
+
+
+          Record stuff here:
+        <br>
+        <button id="startRecButton" type="button"> Start recording</button>
+        <button id="stopRecButton" type="button"> Stop recording</button>
+        <br>auto reset after pause: <input onclick='toggleAutoReset()' id="autoResetInput" class="inputcheckbox" type="checkbox"></input>
+        <br><br>All the words in a recording get grouped in 1 sentence.
+        <br>Check the box above to automatically stop and restart the recording after a pause.
+        <div id="recordingStatus">&nbsp;</div>
+
+******************
+            <div id="ResultText">
+                Current or selected phrase:
+                <br><span id="pasteTextHere">[stt result goes here]</span>
+                <br>*************************
+                <br><button id="playButton">Play</button>
+                <button id="downloadButton">Download</button>
+                      <div id="pasteTextHere2">Time stamps:
+                      </div>
+            </div>
+
+
+      </div>
+<!-- RIGHT SIDE  -->
+      <div class="sides">
+        Available devices (click to select):
+        <div id='devicesGoHere' style='font-size:12px'></div>
+
+        <br>****************************
+        <br>DO THE MARKOV THING
+        <br>[if button is disabled, needs more sentences]
+        <br><button id="generatePhraseButton">riMarkov: generate phrase</button>
+        <br>sentences to generate: <input id="sentencesInput" class="inputform" type="form" value="1"></input>
+        <br>play audio on generation <input id="playAudioInput" class="inputcheckbox" type="checkbox"></input>
+        <!--
+        <br>min sentences length: <input id="minLengthInput" class="inputform" type="form" value="3"></input>
+        <br>max sentences length: <input id="maxLengthInput" class="inputform" type="form" value="12"></input>
+        <br>allow duplicates: <input id="allowDuplicatesInput" class="inputcheckbox" type="checkbox"></input>
+
+        -->
+        Phrases generated:
+        <div id="ritaResultBox">[result goes here]</div>
+
+        <br>***************
+        <br>Sentences in memory:
+        <br><span style="font-size:10px">
+          [click to select, play, view time stamps]
+        </span
+        <br>**************************
+
+
+
+        <div id='recordingsGoHere'></div>
+
+      </div>
+
+
+
+
+
+    </div>
+
+    <!-- Nlp -->
+    <script src="https://unpkg.com/compromise@11.14.3/builds/compromise.min.js"></script>
+
+    <!-- Socket -->
+    <script src="assets/js/osc-browser.min.js"></script>
+    <script src="assets/js/socket.io.js"></script>
+    <script src="assets/js/rita-full.js"></script>
+    <!-- Client -->
+    <script src="assets/js/client.js"></script>
+    <script src="assets/js/buffersave.js"></script>
+    <script src="assets/js/recording.js"></script>
+    <script src="assets/js/stt.js"></script>
+    <script src="assets/js/doritastuff.js"></script>
+    <script src="assets/js/playsentences.js"></script>
+</body>
+
+</html>

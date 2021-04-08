@@ -1,0 +1,6009 @@
+F2939F2F-B7F6-4AAF-B9D1-DAC84C6A6696
+<data>
+<version>
+Photon-Designer 9.3.9039
+</version>
+<data_config_singleton>
+<config_singleton>
+<version>1</version><zlib> 0 </zlib> <d_show_control> 0 </d_show_control> <d_send_message> 0 </d_send_message> <restart_on_thread_crash> 0 </restart_on_thread_crash> <update_ids_ref_point_precision> 0.3 </update_ids_ref_point_precision> <log_file_expiration> 10 </log_file_expiration> <vp_transformation_delay> 0 </vp_transformation_delay>  <Disable_low-res_controller_rendering> 0 </Disable_low-res_controller_rendering>  <Force_Root_Rendering> 0 </Force_Root_Rendering>  <Vertex_Tracking_Shader> 0 </Vertex_Tracking_Shader>  <Controller_Render_Optimisation> 0 </Controller_Render_Optimisation>  <RTC_Discard_Parent_Points> 0 </RTC_Discard_Parent_Points>  <Multicast_UDP_data> 1 </Multicast_UDP_data>  <KF_acceleration> 1 </KF_acceleration>  <Disable_extrapolation> 0 </Disable_extrapolation>  <Use_new_file_dialog> 0 </Use_new_file_dialog>  <VCI_dual-PBO> 1 </VCI_dual-PBO>  <Disable_RT_splitting> 0 </Disable_RT_splitting>  <Show_Duplicate_Trackers_Ids> 1 </Show_Duplicate_Trackers_Ids>  <Silhouette_Soft-edge_(V-WIP)> 0 </Silhouette_Soft-edge_(V-WIP)>  <RGBA_16-bit_FP_timeline> 0 </RGBA_16-bit_FP_timeline>  <Light_Sensor_temporal_value> 0 </Light_Sensor_temporal_value>  <SLAC_Append_points> 0 </SLAC_Append_points>  <Label_Optimization> 1 </Label_Optimization>  <Canvas_splitting_(WIP)> 0 </Canvas_splitting_(WIP)>  <Cross_Fade_Optimize_(WIP)> 1 </Cross_Fade_Optimize_(WIP)>  <SLAC_Gray_GPU_decode> 1 </SLAC_Gray_GPU_decode>  <Tex_Cache_Recycler> 1 </Tex_Cache_Recycler>  <Tex_PBO_Optimize> 1 </Tex_PBO_Optimize>  <Use_Faster_Calibration> 1 </Use_Faster_Calibration>  <Blending_Debug> 0 </Blending_Debug>  <Disable_Layer_Clip_Icons> 1 </Disable_Layer_Clip_Icons>  <Artnet_Channel_Release> 1 </Artnet_Channel_Release>  <FM_Albion_Non_Sync> 0 </FM_Albion_Non_Sync>  <SLAC_Full_+_Clean> 0 </SLAC_Full_+_Clean>  <Measurement_mode> 1 </Measurement_mode>  <RT_Calib_Passive_-_Non-rigid_Align> 0 </RT_Calib_Passive_-_Non-rigid_Align>  <RT_Calib_Passive_-_Rigid_Align> 0 </RT_Calib_Passive_-_Rigid_Align>  <VCI_but_faster> 1 </VCI_but_faster>  <Moving-light_preset_fix> 1 </Moving-light_preset_fix>  <Fixture_Tracking_Opt> 1 </Fixture_Tracking_Opt>  <Limit_Passive_Markers> 0 </Limit_Passive_Markers>  <Dev_Mode_Debug> 0 </Dev_Mode_Debug>  <Container_Optimization> 1 </Container_Optimization>  <DMX_send_sync> 1 </DMX_send_sync> </config_singleton>
+</data_config_singleton>
+<photon_data_map_size> 1 </photon_data_map_size>
+<photon_data_map_list>
+<photon_data_map_list_iter>
+<key>
+desktop-sc8p14t
+</key>
+<photon_data>
+<photon_data>
+<next_generate_projector_id> 0 </next_generate_projector_id>
+<outputs>
+
+</outputs>
+<ui_options>
+<ui_options>
+<projector_x_offset> 1920 </projector_x_offset>
+<projector_resolution_x> 1920 </projector_resolution_x>
+<projector_resolution_y> 1080 </projector_resolution_y>
+<custom_projector_resolution> 0 </custom_projector_resolution>
+<controller_resolution_x> 1920 </controller_resolution_x>
+<controller_resolution_y> 1080 </controller_resolution_y>
+<custom_controller_resolution> 0 </custom_controller_resolution>
+<auto_move_windows> 1 </auto_move_windows>
+<force_foreground_application> 0 </force_foreground_application>
+<disable_sleep_mode> 1 </disable_sleep_mode>
+<output_sdi> 0 </output_sdi>
+<draw_canvas_view> 1 </draw_canvas_view>
+</ui_options>
+</ui_options>
+<ip_id>
+desktop-sc8p14t
+</ip_id>
+<canvas_width>
+1280
+</canvas_width>
+<canvas_height>
+1024
+</canvas_height>
+<photon_type>
+0
+</photon_type>
+<auto_window_creation>
+1
+</auto_window_creation>
+<letter_boxed_window>
+0
+</letter_boxed_window>
+<msaa>
+1
+</msaa>
+</photon_data>
+</photon_data>
+</photon_data_map_list_iter>
+</photon_data_map_list>
+<selected_photon>
+desktop-sc8p14t
+</selected_photon>
+<media_system>
+<media_system>
+<system_preferences>
+<media_system_preferences>
+<monitored_directory>
+7
+</monitored_directory>
+<monitored_directory>
+9
+</monitored_directory>
+<monitored_directory>
+10
+</monitored_directory>
+<import_base_directory>
+5
+</import_base_directory>
+<prefered_import_directory>
+1 7
+</prefered_import_directory>
+<prefered_import_directory>
+2 7
+</prefered_import_directory>
+<prefered_import_directory>
+3 7
+</prefered_import_directory>
+<prefered_import_directory>
+4 7
+</prefered_import_directory>
+<prefered_import_directory>
+5 9
+</prefered_import_directory>
+<prefered_import_directory>
+7 10
+</prefered_import_directory>
+<tmp_directory>
+11
+</tmp_directory>
+<image_sequence_enabled>
+1
+</image_sequence_enabled>
+<auto_load_3d_models>
+1
+</auto_load_3d_models>
+<auto_convert>
+1
+</auto_convert>
+<force_legacy_conversion>
+0
+</force_legacy_conversion>
+<auto_delete>
+0
+</auto_delete>
+<split_obj_id>
+-1
+</split_obj_id>
+<conversion_parameters>
+<conversion_params>
+<vcp>
+<video_conversion_params>
+<codec>
+1
+</codec>
+<max_mega_pixels>
+20
+</max_mega_pixels>
+<preview_max_mega_pixels>
+0.1
+</preview_max_mega_pixels>
+<gpu_conversion>
+1
+</gpu_conversion>
+<hdr_conversion>
+0
+</hdr_conversion>
+<resize_quality>
+2
+</resize_quality>
+<split_bb>
+4 0 0 0 1 1 1 1 0 
+
+</split_bb>
+<default_frame_rate>
+-1
+</default_frame_rate>
+<vci_pixel_format>
+0
+</vci_pixel_format>
+<h264_codec>
+1
+</h264_codec>
+<h264_key_frame_interval>
+1
+</h264_key_frame_interval>
+<h264_quality>
+0.8
+</h264_quality>
+<h264_alpha_resolution>
+1
+</h264_alpha_resolution>
+<vc4_mipmap_levels>
+3
+</vc4_mipmap_levels>
+<vc4_block_size>
+128
+</vc4_block_size>
+<vc4_pixel_format>
+0
+</vc4_pixel_format>
+<mp4_gop>
+1
+</mp4_gop>
+<mp4_quality>
+80
+</mp4_quality>
+<mp4_mbps>
+8000000
+</mp4_mbps>
+</video_conversion_params>
+
+</vcp>
+<acp>
+<audio_conversion_params>
+<codec>
+1
+</codec>
+</audio_conversion_params>
+
+</acp>
+
+</conversion_params>
+
+</conversion_parameters>
+<watch_folder_parameters>
+<watch_folder_parameters>
+<conflict_preference>
+0
+</conflict_preference>
+<watch_frequency>
+5
+</watch_frequency>
+<watch_pause>
+1
+</watch_pause>
+<directory_selected>
+0
+</directory_selected>
+<selected_playlist>
+0
+</selected_playlist>
+</watch_folder_parameters>
+
+</watch_folder_parameters>
+</media_system_preferences>
+
+</system_preferences>
+<library>
+<media_library>
+<media>
+<media>
+<property>
+<type>
+0
+</type>
+<value>
+Banq.obj
+</value>
+
+</property>
+<property>
+<type>
+1
+</type>
+<value>
+9
+</value>
+
+</property>
+<property>
+<type>
+2
+</type>
+<value>
+.obj
+</value>
+
+</property>
+<property>
+<type>
+3
+</type>
+<value>
+37137
+</value>
+
+</property>
+<property>
+<type>
+4
+</type>
+<value>
+2021 3 1 29 17 11 50 204
+</value>
+
+</property>
+<property>
+<type>
+5
+</type>
+<value>
+2021 3 1 29 17 11 50 413
+</value>
+
+</property>
+<property>
+<type>
+14
+</type>
+<value>
+1
+</value>
+
+</property>
+<property>
+<type>
+15
+</type>
+<value>
+203
+</value>
+
+</property>
+<property>
+<type>
+16
+</type>
+<value>
+252
+</value>
+
+</property>
+
+</media>
+
+</media>
+
+</media_library>
+
+</library>
+<view>
+<media_view>
+<preferences>
+<media_view_preferences>
+<size>
+1000 800
+</size>
+<hide_original_format>
+0
+</hide_original_format>
+<regroup_medias_by_base_name>
+0
+</regroup_medias_by_base_name>
+<view_mode>
+0
+</view_mode>
+<preview_view_visible>
+1
+</preview_view_visible>
+<task_view_visible>
+1
+</task_view_visible>
+<show_tasks_completed>
+0
+</show_tasks_completed>
+<sorting_preferences>
+<property_type>
+2
+</property_type>
+<ascending>
+1
+</ascending>
+
+</sorting_preferences>
+<user_playlists_prefered_order>
+
+</user_playlists_prefered_order>
+
+</media_view_preferences>
+
+</preferences>
+<sub_views>
+<media_view_playlist>
+
+</media_view_playlist>
+<media_view_detail>
+<user_playlists_visible_properties>
+<property>
+0
+</property>
+<property>
+2
+</property>
+<property>
+3
+</property>
+<property>
+6
+</property>
+<property>
+8
+</property>
+<property>
+9
+</property>
+<property>
+10
+</property>
+<property>
+11
+</property>
+<property>
+14
+</property>
+
+</user_playlists_visible_properties>
+<sys_playlist_clear_visible_properties>
+
+</sys_playlist_clear_visible_properties>
+<sys_playlist_visible_properties>
+<name>
+3D Object
+</name>
+<property>
+0
+</property>
+<property>
+2
+</property>
+<property>
+3
+</property>
+<property>
+14
+</property>
+<property>
+15
+</property>
+<property>
+16
+</property>
+
+</sys_playlist_visible_properties>
+<sys_playlist_visible_properties>
+<name>
+All Media
+</name>
+<property>
+0
+</property>
+<property>
+2
+</property>
+<property>
+3
+</property>
+<property>
+6
+</property>
+<property>
+8
+</property>
+<property>
+9
+</property>
+<property>
+10
+</property>
+<property>
+11
+</property>
+<property>
+12
+</property>
+<property>
+13
+</property>
+<property>
+14
+</property>
+<property>
+15
+</property>
+<property>
+16
+</property>
+
+</sys_playlist_visible_properties>
+<sys_playlist_visible_properties>
+<name>
+All Playback Media
+</name>
+<property>
+0
+</property>
+<property>
+2
+</property>
+<property>
+3
+</property>
+<property>
+6
+</property>
+<property>
+8
+</property>
+<property>
+9
+</property>
+<property>
+10
+</property>
+<property>
+11
+</property>
+<property>
+12
+</property>
+<property>
+13
+</property>
+<property>
+14
+</property>
+
+</sys_playlist_visible_properties>
+<sys_playlist_visible_properties>
+<name>
+Audio
+</name>
+<property>
+0
+</property>
+<property>
+2
+</property>
+<property>
+3
+</property>
+<property>
+8
+</property>
+<property>
+11
+</property>
+<property>
+12
+</property>
+<property>
+14
+</property>
+
+</sys_playlist_visible_properties>
+<sys_playlist_visible_properties>
+<name>
+Image
+</name>
+<property>
+0
+</property>
+<property>
+2
+</property>
+<property>
+3
+</property>
+<property>
+6
+</property>
+<property>
+10
+</property>
+<property>
+14
+</property>
+
+</sys_playlist_visible_properties>
+<sys_playlist_visible_properties>
+<name>
+Video
+</name>
+<property>
+0
+</property>
+<property>
+2
+</property>
+<property>
+3
+</property>
+<property>
+6
+</property>
+<property>
+8
+</property>
+<property>
+9
+</property>
+<property>
+10
+</property>
+<property>
+11
+</property>
+<property>
+12
+</property>
+<property>
+13
+</property>
+<property>
+14
+</property>
+
+</sys_playlist_visible_properties>
+<column_width>
+<name>
+13
+</name>
+<width>
+25
+</width>
+
+</column_width>
+
+</media_view_detail>
+<media_view_thumbnail>
+<thumb_size>
+128
+</thumb_size>
+
+</media_view_thumbnail>
+
+</sub_views>
+
+</media_view>
+
+</view>
+
+</media_system>
+
+</media_system>
+<data_cc_interface>
+<cci>
+
+<cci_next_id>
+-1
+</cci_next_id>
+</cci>
+</data_cc_interface>
+
+<show_interface>
+<show_interface>
+<framerate>
+30000
+</framerate>
+<network_sync_max_frame_offset>
+0.5
+</network_sync_max_frame_offset>
+<network_sync_max_avg_frame_offset>
+0.1
+</network_sync_max_avg_frame_offset>
+<network_sync_max_system_time_frame_offset>
+2
+</network_sync_max_system_time_frame_offset>
+<time_line>
+<time_line>
+<search_filter>
+
+</search_filter>
+<time_current>
+<time>
+<usec> 123.79998779296875 </usec>
+</time>
+
+</time_current>
+<time_offset>
+<time>
+<usec> 0 </usec>
+</time>
+
+</time_offset>
+<time_pos_min>
+0
+</time_pos_min>
+<time_pos_max>
+1
+</time_pos_max>
+<play_speed>
+0
+</play_speed>
+<show_current_region>
+1
+</show_current_region>
+<move_region_group>
+0
+</move_region_group>
+<ltc_running>
+0
+</ltc_running>
+<tc_auto>
+0
+</tc_auto>
+<tc_auto_stop>
+0
+</tc_auto_stop>
+<tc_id>
+2
+</tc_id>
+<time_line_size>
+1160
+296
+</time_line_size>
+</time_line>
+</time_line>
+<time_code_interface>
+<time_code_interface_v2>
+<time_code_list>
+<time_code_iter>
+<name>
+Time Code 2
+</name>
+<id>
+2
+</id>
+<enable>
+1
+</enable>
+<fps>
+30000
+</fps>
+<offset_op>
+0
+</offset_op>
+<offset>
+0
+</offset>
+<mode>
+0
+</mode>
+<channel>
+1
+</channel>
+<device>
+-1
+</device>
+<samples>
+4096
+</samples>
+<midi>
+-1
+</midi>
+</time_code_iter>
+</time_code_list>
+</time_code_interface_v2>
+</time_code_interface>
+<show_pwm>
+<pwm>
+<pwm_data_iter>
+<preview_window_size> 640 480 </preview_window_size>
+<view_zoom>
+0.95
+</view_zoom>
+<view_pan>
+0 0
+</view_pan>
+<canvas_manipulation_tool>
+1
+</canvas_manipulation_tool>
+<set_view_type>
+-2
+</set_view_type>
+<path_opacity>
+1
+</path_opacity>
+<preview_mode>
+0
+</preview_mode>
+<base_container_id>
+20000037
+</base_container_id>
+</pwm_data_iter>
+<pwm_data_iter>
+<preview_window_size> 640 480 </preview_window_size>
+<view_zoom>
+0.95
+</view_zoom>
+<view_pan>
+0 0
+</view_pan>
+<canvas_manipulation_tool>
+1
+</canvas_manipulation_tool>
+<set_view_type>
+-2
+</set_view_type>
+<path_opacity>
+1
+</path_opacity>
+<preview_mode>
+0
+</preview_mode>
+<base_container_id>
+20000050
+</base_container_id>
+</pwm_data_iter>
+</pwm>
+</show_pwm>
+<media_file_interface>
+<mfi>
+</mfi>
+</media_file_interface>
+<show_rendering_interface>
+<rendering_interface>
+<output_resolution> 320 240 </output_resolution>
+<time_in> <time>
+<usec> 0 </usec>
+</time>
+ </time_in>
+<time_out> <time>
+<usec> 300000000 </usec>
+</time>
+ </time_out>
+<output_video_format>
+2
+</output_video_format>
+<sequence_id>
+-1
+</sequence_id>
+<sub_sequence_id>
+-1
+</sub_sequence_id>
+<rendering_mode>
+0
+</rendering_mode>
+<frame_rate>
+30000
+</frame_rate>
+<msaa>
+4
+</msaa>
+<file_name>
+content/default_render.mp4
+</file_name>
+</rendering_interface>
+</show_rendering_interface>
+<show_keyframe_editor>
+<keyframe_editor>
+<key_data_iter>
+<pan_zoom_in_x>
+0
+</pan_zoom_in_x>
+<pan_zoom_out_x>
+1
+</pan_zoom_out_x>
+<pan_zoom_in_y>
+0
+</pan_zoom_in_y>
+<pan_zoom_out_y>
+1
+</pan_zoom_out_y>
+<grid_subdivisions>
+10
+</grid_subdivisions>
+<sync_with_timeline>
+1
+</sync_with_timeline>
+<keyframe_editor_size>
+565
+400
+</keyframe_editor_size>
+</key_data_iter>
+<key_data_iter>
+<pan_zoom_in_x>
+0
+</pan_zoom_in_x>
+<pan_zoom_out_x>
+1
+</pan_zoom_out_x>
+<pan_zoom_in_y>
+0
+</pan_zoom_in_y>
+<pan_zoom_out_y>
+1
+</pan_zoom_out_y>
+<grid_subdivisions>
+10
+</grid_subdivisions>
+<sync_with_timeline>
+1
+</sync_with_timeline>
+<keyframe_editor_size>
+850
+16
+</keyframe_editor_size>
+</key_data_iter>
+</keyframe_editor>
+</show_keyframe_editor>
+<show_fx_graph_interface>
+<fx_graph_interface>
+<graph_manager>
+<graph_manager>
+<graph_collection>
+</graph_collection>
+<selected_graph_index>
+-1
+</selected_graph_index>
+<next_graph_id>
+98
+</next_graph_id>
+</graph_manager>
+
+</graph_manager>
+<graph_interface_graph_list>
+<media_playlist_interface>
+<current_playlist>
+500
+</current_playlist>
+<next_playlist_id>
+37
+</next_playlist_id>
+<media_playlist_interface_item>
+<media_playlist>
+<id>
+33
+</id>
+<name>
+Albion
+</name>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Distance btw. 2 3D points
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Isolate one Tracker
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Ray Intersect
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+</media_playlist>
+
+</media_playlist_interface_item>
+<media_playlist_interface_item>
+<media_playlist>
+<id>
+34
+</id>
+<name>
+FX
+</name>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Basic Texture FX
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+<media_playlist_item_param>
+<media_playlist_item_name>
+GPGPU FLUID FX
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Old Film
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+</media_playlist>
+
+</media_playlist_interface_item>
+<media_playlist_interface_item>
+<media_playlist>
+<id>
+35
+</id>
+<name>
+Particles
+</name>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Basic Particle System 1 (points)
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Basic Particle System 2 (sprites)
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Particles Energy Attractors
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+</media_playlist>
+
+</media_playlist_interface_item>
+<media_playlist_interface_item>
+<media_playlist>
+<id>
+36
+</id>
+<name>
+UDP
+</name>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Analyze UDP Msg to trigger a Cue
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+<media_playlist_item_param>
+<media_playlist_item_name>
+Transform UDP to Num
+</media_playlist_item_name>
+<media_playlist_item_valid>
+1
+</media_playlist_item_valid>
+
+</media_playlist_item_param>
+</media_playlist>
+
+</media_playlist_interface_item>
+</media_playlist_interface>
+
+</graph_interface_graph_list>
+<graph_interface>
+<graph_interface>
+<graph_size>
+320 320
+</graph_size>
+<tree_graph_container>
+<tree_graph>
+<base> <item>
+<id> 71010001 </id> <st> 1 </st> <str_id>
+
+</str_id>
+<la>
+Graph
+</la>
+<dl>
+
+</dl>
+<sl> 1 </sl> <en> 1 </en> <vis> 1 </vis> <po> 0 16 </po> <do> 0 0 </do> <pp> 1 </pp> <si> 320 304 </si> <ls> 0 0 </ls> <ad> 1 </ad> <acb> 0 </acb> 
+<acm>
+Are you sure you want to perform that action ?
+</acm>
+<tm>
+
+</tm>
+<ase> 0 </ase> <fmep> 0 </fmep> <aco> 0 </aco> <fc> 1 1 1 1 </fc> <sc> 1 1 1 1 </sc> <af> 1 </af> <cpe> 1 </cpe> <fn> default_font </fn> <fs> 11 </fs> <ulat> 0 </ulat> </item>
+ </base> <grid_parameters>
+<grid_cell_width>
+110
+</grid_cell_width>
+<grid_cell_height>
+24
+</grid_cell_height>
+<snap_distance>
+15
+</snap_distance>
+<is_grid_rendered>
+0
+</is_grid_rendered>
+<is_snap_to_grid_enabled>
+0
+</is_snap_to_grid_enabled>
+
+</grid_parameters>
+</tree_graph>
+
+</tree_graph_container>
+
+</graph_interface>
+
+</graph_interface>
+</fx_graph_interface>
+</show_fx_graph_interface>
+<show_sequence_interface>
+<sequence_interface>
+<next_generate_sequence_id> 2 </next_generate_sequence_id>
+<current_sequence_id> 1 </current_sequence_id>
+<next_generate_sub_sequence_id> 4 </next_generate_sub_sequence_id>
+<next_generate_layer_id>
+5
+</next_generate_layer_id>
+<next_generate_container_id>
+5
+</next_generate_container_id>
+<cft>
+0
+</cft>
+<cfe>
+0
+</cfe>
+<ssd_list>
+<ssd_list_iter>
+<ssd>
+<ssd_id> 1 </ssd_id>
+<current_screen_id> 1 </current_screen_id>
+<ssd_name>
+Sequence 1
+</ssd_name>
+<ssd_size>
+2
+</ssd_size>
+<ssd_map_iter>
+-1
+<sequence>
+<sequence_name>
+Root
+</sequence_name>
+<sequence_id>
+2
+</sequence_id>
+<sequence_screen_id>
+-1
+</sequence_screen_id>
+<sequence_visible>
+1
+</sequence_visible>
+<sequence_minimized>
+0
+</sequence_minimized>
+<sequence_ppr>
+0
+</sequence_ppr>
+<current_layer_id>
+-1
+</current_layer_id>
+<next_generate_region_id>
+2
+</next_generate_region_id>
+<sequence_layer_list_size> 1 </sequence_layer_list_size>
+<region_list_size> 1 </region_list_size>
+<linked_id> -1 </linked_id>
+<ite> 0 </ite>
+<itc_id> -1 </itc_id>
+<itc_enable> 0 </itc_enable>
+<itc_aplay> 0 </itc_aplay>
+<itc_apause> 0 </itc_apause>
+<region_list>
+<region_list_iter>
+<time_region>
+<name>
+region 1
+</name>
+<id>
+1
+</id>
+<start>
+<time>
+<usec> 66.20001220703125 </usec>
+</time>
+
+</start>
+<duration>
+<time>
+<usec> 120000000 </usec>
+</time>
+
+</duration>
+</time_region>
+
+</region_list_iter>
+</region_list>
+<sequence_layer_list_v2>
+<sequence_layer_list_iter>
+<layer>
+<name>
+Root
+</name>
+<id>
+2
+</id>
+<lock>
+0
+</lock>
+<visible>
+1
+</visible>
+<or>
+0
+</or>
+<alpha>
+1
+</alpha>
+<containers_list_size> 1 </containers_list_size>
+<containers_list>
+<container_list_iter>
+<lc_v4>
+<ti> 0 </ti> <du> 0 </du> 
+<cs>
+<cs2>
+<mm> 14 </mm> <pt> 0 </pt> <cd> 0 </cd> <ad> 0 </ad>  <fi> 0 </fi>  <fo> 0 </fo> 
+<mn2>
+
+</mn2>
+
+<fe>
+.mov
+</fe>
+<fs1> -1 </fs1>  <fs2> -1 </fs2>  <ci> -1 </ci>  <si> -1 </si>  <ii> -1 </ii> 
+<vri>
+-1
+</vri> 
+<vrs>
+0
+</vrs> 
+<vra>
+0
+</vra> 
+<vrif>
+0
+</vrif> 
+<vrof>
+0
+</vrof>  <os> <time>
+<usec> 0 </usec>
+</time>
+ </os>  <oe> <time>
+<usec> 0 </usec>
+</time>
+ </oe> 
+<ho>
+
+</ho>
+
+<pa>
+
+</pa>
+ <pd> 0 </pd>  <mlp> 0 </mlp> 
+<pname>
+All Playback Media
+</pname>
+
+<cc_v2>
+0.3 0.3 0.3
+</cc_v2>
+
+<fxs>
+<fxs>
+
+</fxs>
+
+</fxs>
+
+<fxts>
+<fxts>
+<fxtid>
+-1
+</fxtid>
+<fxtsrcs>
+
+</fxtsrcs>
+<unlinked_sources>
+
+</unlinked_sources>
+
+</fxts>
+
+</fxts>
+
+<pss>
+<pss>
+<psid>
+-1
+</psid>
+<vcid>
+-1
+</vcid>
+
+</pss>
+
+</pss>
+
+<cats>
+<ats>
+<ab>
+0
+</ab>
+<ac>
+1
+</ac>
+<ag>
+1
+</ag>
+<lsi>
+-1
+</lsi>
+<da>
+0
+</da>
+<afi>
+0
+</afi>
+<aiv>
+0
+</aiv>
+<sa>
+0
+</sa>
+
+</ats>
+
+</cats>
+
+<cccs>
+<ccs>
+<ccd>
+<ccd>
+
+<id>
+2
+</id>
+<name>
+
+</name>
+<target>
+1
+</target>
+<shadows_hue>
+0
+</shadows_hue>
+<shadows_gain>
+0
+</shadows_gain>
+<midtones_hue>
+0
+</midtones_hue>
+<midtones_gain>
+0
+</midtones_gain>
+<highlights_hue>
+0
+</highlights_hue>
+<highlights_gain>
+0
+</highlights_gain>
+<hue>
+0
+</hue>
+<saturation>
+1
+</saturation>
+<lightness>
+0
+</lightness>
+<brightness>
+0
+</brightness>
+<contrast>
+0
+</contrast>
+<gamma_r>
+1
+</gamma_r>
+<gamma_g>
+1
+</gamma_g>
+<gamma_b>
+1
+</gamma_b>
+<gain_r>
+1
+</gain_r>
+<gain_g>
+1
+</gain_g>
+<gain_b>
+1
+</gain_b>
+<invert_r>
+0
+</invert_r>
+<invert_g>
+0
+</invert_g>
+<invert_b>
+0
+</invert_b>
+<output_black_level>
+0
+</output_black_level>
+<output_white_level>
+1
+</output_white_level>
+<input_black_level>
+0
+</input_black_level>
+<input_white_level>
+1
+</input_white_level>
+<curve>
+<ccc>
+<ctrl_pts>
+2 0 0 1 1 2 0 0 1 1 2 0 0 1 1 2 0 0 1 1 
+</ctrl_pts>
+
+</ccc>
+
+</curve>
+</ccd>
+</ccd>
+
+</ccs>
+
+</cccs>
+
+<comst>
+<com_st>
+<id>
+-1
+</id>
+<custom>
+0
+</custom>
+<w>
+1280
+</w>
+<h>
+720
+</h>
+<region>
+-1
+</region>
+<tc_id>
+-1
+</tc_id>
+<tc_enable>
+0
+</tc_enable>
+
+</com_st>
+
+</comst>
+
+<apst>
+<ap_st>
+<auto_chan>
+1
+</auto_chan>
+<device_idx>
+0
+</device_idx>
+<map_it>
+-1 1
+</map_it>
+
+</ap_st>
+
+</apst>
+
+<sss>
+<s_st>
+<s_id>
+-1
+</s_id>
+<s_se>
+<shadow_engine>
+<pt>
+8
+</pt>
+<rt>
+6
+</rt>
+<pio>
+0
+</pio>
+
+</shadow_engine>
+
+</s_se>
+
+</s_st>
+
+</sss>
+
+<lip>
+0
+</lip>
+
+<lop>
+0
+</lop>
+
+</cs2>
+
+</cs>
+
+<na>
+
+</na>
+
+<id>
+2
+</id>
+
+<se>
+0
+</se>
+<kl>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0.5 </dv> 
+<sv>
+
+</sv>
+<pn>
+0
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0.5 </dv> 
+<sv>
+
+</sv>
+<pn>
+1
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+2
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+3
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+4
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+5
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+121
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+122
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+123
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+124
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+125
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+126
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+127
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+128
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+129
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+130
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+131
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+132
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+133
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+134
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+135
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+136
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+137
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+138
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+139
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+140
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+141
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+142
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+143
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+145
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<epn>
+
+</epn>
+</kl>
+<co>
+<composer>
+<source_ids_size>
+0
+</source_ids_size>
+<use_source_alpha> 1 </use_source_alpha>
+<use_custom_resolution> 0 </use_custom_resolution>
+<width> 1920 </width>
+<height> 1080 </height>
+</composer>
+</co>
+</lc_v4>
+
+</container_list_iter>
+</containers_list>
+</layer>
+
+</sequence_layer_list_iter>
+</sequence_layer_list_v2>
+</sequence>
+
+</ssd_map_iter>
+<ssd_map_iter>
+1
+<sequence>
+<sequence_name>
+Banq.obj
+</sequence_name>
+<sequence_id>
+3
+</sequence_id>
+<sequence_screen_id>
+1
+</sequence_screen_id>
+<sequence_visible>
+1
+</sequence_visible>
+<sequence_minimized>
+0
+</sequence_minimized>
+<sequence_ppr>
+0
+</sequence_ppr>
+<current_layer_id>
+3
+</current_layer_id>
+<next_generate_region_id>
+1
+</next_generate_region_id>
+<sequence_layer_list_size> 2 </sequence_layer_list_size>
+<region_list_size> 0 </region_list_size>
+<linked_id> -1 </linked_id>
+<ite> 0 </ite>
+<itc_id> -1 </itc_id>
+<itc_enable> 0 </itc_enable>
+<itc_aplay> 0 </itc_aplay>
+<itc_apause> 0 </itc_apause>
+<region_list>
+</region_list>
+<sequence_layer_list_v2>
+<sequence_layer_list_iter>
+<layer>
+<name>
+Banq.obj
+</name>
+<id>
+3
+</id>
+<lock>
+0
+</lock>
+<visible>
+1
+</visible>
+<or>
+0
+</or>
+<alpha>
+1
+</alpha>
+<containers_list_size> 1 </containers_list_size>
+<containers_list>
+<container_list_iter>
+<lc_v4>
+<ti> 0 </ti> <du> 0 </du> 
+<cs>
+<cs2>
+<mm> 14 </mm> <pt> 0 </pt> <cd> 0 </cd> <ad> 0 </ad>  <fi> 0 </fi>  <fo> 0 </fo> 
+<mn2>
+
+</mn2>
+
+<fe>
+.mov
+</fe>
+<fs1> -1 </fs1>  <fs2> -1 </fs2>  <ci> -1 </ci>  <si> -1 </si>  <ii> -1 </ii> 
+<vri>
+-1
+</vri> 
+<vrs>
+0
+</vrs> 
+<vra>
+0
+</vra> 
+<vrif>
+0
+</vrif> 
+<vrof>
+0
+</vrof>  <os> <time>
+<usec> 0 </usec>
+</time>
+ </os>  <oe> <time>
+<usec> 0 </usec>
+</time>
+ </oe> 
+<ho>
+
+</ho>
+
+<pa>
+
+</pa>
+ <pd> 0 </pd>  <mlp> 0 </mlp> 
+<pname>
+All Playback Media
+</pname>
+
+<cc_v2>
+0.3 0.3 0.3
+</cc_v2>
+
+<fxs>
+<fxs>
+
+</fxs>
+
+</fxs>
+
+<fxts>
+<fxts>
+<fxtid>
+-1
+</fxtid>
+<fxtsrcs>
+
+</fxtsrcs>
+<unlinked_sources>
+
+</unlinked_sources>
+
+</fxts>
+
+</fxts>
+
+<pss>
+<pss>
+<psid>
+-1
+</psid>
+<vcid>
+-1
+</vcid>
+
+</pss>
+
+</pss>
+
+<cats>
+<ats>
+<ab>
+0
+</ab>
+<ac>
+1
+</ac>
+<ag>
+1
+</ag>
+<lsi>
+-1
+</lsi>
+<da>
+0
+</da>
+<afi>
+0
+</afi>
+<aiv>
+0
+</aiv>
+<sa>
+0
+</sa>
+
+</ats>
+
+</cats>
+
+<cccs>
+<ccs>
+<ccd>
+<ccd>
+
+<id>
+3
+</id>
+<name>
+
+</name>
+<target>
+1
+</target>
+<shadows_hue>
+0
+</shadows_hue>
+<shadows_gain>
+0
+</shadows_gain>
+<midtones_hue>
+0
+</midtones_hue>
+<midtones_gain>
+0
+</midtones_gain>
+<highlights_hue>
+0
+</highlights_hue>
+<highlights_gain>
+0
+</highlights_gain>
+<hue>
+0
+</hue>
+<saturation>
+1
+</saturation>
+<lightness>
+0
+</lightness>
+<brightness>
+0
+</brightness>
+<contrast>
+0
+</contrast>
+<gamma_r>
+1
+</gamma_r>
+<gamma_g>
+1
+</gamma_g>
+<gamma_b>
+1
+</gamma_b>
+<gain_r>
+1
+</gain_r>
+<gain_g>
+1
+</gain_g>
+<gain_b>
+1
+</gain_b>
+<invert_r>
+0
+</invert_r>
+<invert_g>
+0
+</invert_g>
+<invert_b>
+0
+</invert_b>
+<output_black_level>
+0
+</output_black_level>
+<output_white_level>
+1
+</output_white_level>
+<input_black_level>
+0
+</input_black_level>
+<input_white_level>
+1
+</input_white_level>
+<curve>
+<ccc>
+<ctrl_pts>
+2 0 0 1 1 2 0 0 1 1 2 0 0 1 1 2 0 0 1 1 
+</ctrl_pts>
+
+</ccc>
+
+</curve>
+</ccd>
+</ccd>
+
+</ccs>
+
+</cccs>
+
+<comst>
+<com_st>
+<id>
+-1
+</id>
+<custom>
+0
+</custom>
+<w>
+1280
+</w>
+<h>
+720
+</h>
+<region>
+-1
+</region>
+<tc_id>
+-1
+</tc_id>
+<tc_enable>
+0
+</tc_enable>
+
+</com_st>
+
+</comst>
+
+<apst>
+<ap_st>
+<auto_chan>
+1
+</auto_chan>
+<device_idx>
+0
+</device_idx>
+<map_it>
+-1 1
+</map_it>
+
+</ap_st>
+
+</apst>
+
+<sss>
+<s_st>
+<s_id>
+-1
+</s_id>
+<s_se>
+<shadow_engine>
+<pt>
+8
+</pt>
+<rt>
+6
+</rt>
+<pio>
+0
+</pio>
+
+</shadow_engine>
+
+</s_se>
+
+</s_st>
+
+</sss>
+
+<lip>
+0
+</lip>
+
+<lop>
+0
+</lop>
+
+</cs2>
+
+</cs>
+
+<na>
+
+</na>
+
+<id>
+3
+</id>
+
+<se>
+1
+</se>
+<kl>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0.5 </dv> 
+<sv>
+
+</sv>
+<pn>
+0
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0.5 </dv> 
+<sv>
+
+</sv>
+<pn>
+1
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+2
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+3
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+4
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+5
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+121
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+122
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+123
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+124
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+125
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+126
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+127
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+128
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+129
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+130
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+131
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+132
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+133
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+134
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+135
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+136
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+137
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+138
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+139
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+140
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+141
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+142
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+143
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+145
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<epn>
+
+</epn>
+</kl>
+<co>
+<composer>
+<source_ids_size>
+0
+</source_ids_size>
+<use_source_alpha> 1 </use_source_alpha>
+<use_custom_resolution> 0 </use_custom_resolution>
+<width> 1920 </width>
+<height> 1080 </height>
+</composer>
+</co>
+</lc_v4>
+
+</container_list_iter>
+</containers_list>
+</layer>
+
+</sequence_layer_list_iter>
+<sequence_layer_list_iter>
+<layer>
+<name>
+osc
+</name>
+<id>
+4
+</id>
+<lock>
+0
+</lock>
+<visible>
+1
+</visible>
+<or>
+0
+</or>
+<alpha>
+1
+</alpha>
+<containers_list_size> 1 </containers_list_size>
+<containers_list>
+<container_list_iter>
+<lc_v4>
+<ti> 0 </ti> <du> 0 </du> 
+<cs>
+<cs2>
+<mm> 9 </mm> <pt> 0 </pt> <cd> 0 </cd> <ad> 0 </ad>  <fi> 0 </fi>  <fo> 0 </fo> 
+<mn2>
+Device 1 : Spout (Main Camera)
+</mn2>
+
+<fe>
+.mov
+</fe>
+<fs1> -1 </fs1>  <fs2> -1 </fs2>  <ci> -1 </ci>  <si> -1 </si>  <ii> 0 </ii> 
+<vri>
+-1
+</vri> 
+<vrs>
+0
+</vrs> 
+<vra>
+0
+</vra> 
+<vrif>
+0
+</vrif> 
+<vrof>
+0
+</vrof>  <os> <time>
+<usec> 0 </usec>
+</time>
+ </os>  <oe> <time>
+<usec> 0 </usec>
+</time>
+ </oe> 
+<ho>
+
+</ho>
+
+<pa>
+
+</pa>
+ <pd> 0 </pd>  <mlp> 0 </mlp> 
+<pname>
+All Playback Media
+</pname>
+
+<cc_v2>
+0.662745098039 0.41568627451 1
+</cc_v2>
+
+<fxs>
+<fxs>
+
+</fxs>
+
+</fxs>
+
+<fxts>
+<fxts>
+<fxtid>
+-1
+</fxtid>
+<fxtsrcs>
+
+</fxtsrcs>
+<unlinked_sources>
+
+</unlinked_sources>
+
+</fxts>
+
+</fxts>
+
+<pss>
+<pss>
+<psid>
+-1
+</psid>
+<vcid>
+-1
+</vcid>
+
+</pss>
+
+</pss>
+
+<cats>
+<ats>
+<ab>
+0
+</ab>
+<ac>
+1
+</ac>
+<ag>
+1
+</ag>
+<lsi>
+-1
+</lsi>
+<da>
+0
+</da>
+<afi>
+0
+</afi>
+<aiv>
+0
+</aiv>
+<sa>
+0
+</sa>
+
+</ats>
+
+</cats>
+
+<cccs>
+<ccs>
+<ccd>
+<ccd>
+
+<id>
+4
+</id>
+<name>
+
+</name>
+<target>
+1
+</target>
+<shadows_hue>
+0
+</shadows_hue>
+<shadows_gain>
+0
+</shadows_gain>
+<midtones_hue>
+0
+</midtones_hue>
+<midtones_gain>
+0
+</midtones_gain>
+<highlights_hue>
+0
+</highlights_hue>
+<highlights_gain>
+0
+</highlights_gain>
+<hue>
+0
+</hue>
+<saturation>
+1
+</saturation>
+<lightness>
+0
+</lightness>
+<brightness>
+0
+</brightness>
+<contrast>
+0
+</contrast>
+<gamma_r>
+1
+</gamma_r>
+<gamma_g>
+1
+</gamma_g>
+<gamma_b>
+1
+</gamma_b>
+<gain_r>
+1
+</gain_r>
+<gain_g>
+1
+</gain_g>
+<gain_b>
+1
+</gain_b>
+<invert_r>
+0
+</invert_r>
+<invert_g>
+0
+</invert_g>
+<invert_b>
+0
+</invert_b>
+<output_black_level>
+0
+</output_black_level>
+<output_white_level>
+1
+</output_white_level>
+<input_black_level>
+0
+</input_black_level>
+<input_white_level>
+1
+</input_white_level>
+<curve>
+<ccc>
+<ctrl_pts>
+2 0 0 1 1 2 0 0 1 1 2 0 0 1 1 2 0 0 1 1 
+</ctrl_pts>
+
+</ccc>
+
+</curve>
+</ccd>
+</ccd>
+
+</ccs>
+
+</cccs>
+
+<comst>
+<com_st>
+<id>
+-1
+</id>
+<custom>
+0
+</custom>
+<w>
+1280
+</w>
+<h>
+720
+</h>
+<region>
+-1
+</region>
+<tc_id>
+-1
+</tc_id>
+<tc_enable>
+0
+</tc_enable>
+
+</com_st>
+
+</comst>
+
+<apst>
+<ap_st>
+<auto_chan>
+1
+</auto_chan>
+<device_idx>
+0
+</device_idx>
+<map_it>
+-1 1
+</map_it>
+
+</ap_st>
+
+</apst>
+
+<sss>
+<s_st>
+<s_id>
+-1
+</s_id>
+<s_se>
+<shadow_engine>
+<pt>
+8
+</pt>
+<rt>
+6
+</rt>
+<pio>
+0
+</pio>
+
+</shadow_engine>
+
+</s_se>
+
+</s_st>
+
+</sss>
+
+<lip>
+0
+</lip>
+
+<lop>
+0
+</lop>
+
+</cs2>
+
+</cs>
+
+<na>
+
+</na>
+
+<id>
+4
+</id>
+
+<se>
+0
+</se>
+<kl>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0.5 </dv> 
+<sv>
+
+</sv>
+<pn>
+0
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0.5 </dv> 
+<sv>
+
+</sv>
+<pn>
+1
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+2
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+3
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+4
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+5
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+121
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+122
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+123
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+124
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+125
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+126
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+127
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+128
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+129
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+130
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+131
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+132
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+133
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+134
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+135
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+136
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+137
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+138
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+139
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+140
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+141
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+142
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 0 </dv> 
+<sv>
+
+</sv>
+<pn>
+143
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<dk>
+<ck2>
+<ti> 0 </ti> <dv> 1 </dv> 
+<sv>
+
+</sv>
+<pn>
+145
+</pn>
+
+<ei>
+-1 0
+</ei>
+
+<eo>
+1 0
+</eo>
+
+<it>
+1
+</it>
+</ck2>
+
+</dk>
+<epn>
+
+</epn>
+</kl>
+<co>
+<composer>
+<source_ids_size>
+0
+</source_ids_size>
+<use_source_alpha> 1 </use_source_alpha>
+<use_custom_resolution> 0 </use_custom_resolution>
+<width> 1920 </width>
+<height> 1080 </height>
+</composer>
+</co>
+</lc_v4>
+
+</container_list_iter>
+</containers_list>
+</layer>
+
+</sequence_layer_list_iter>
+</sequence_layer_list_v2>
+</sequence>
+
+</ssd_map_iter>
+<res>
+1920 1080
+</res>
+<is_compo>
+0
+</is_compo>
+<duration>
+<time>
+<usec> 7200000000 </usec>
+</time>
+
+</duration>
+<auto_loop>
+0
+</auto_loop>
+</ssd>
+
+</ssd_list_iter>
+</ssd_list>
+</new_id_generation_v2>
+</sequence_interface>
+</show_sequence_interface>
+<si_super_widget_size>
+0 914</si_super_widget_size>
+<si_layer_height>
+16</si_layer_height>
+<si_master_layer_height>
+16</si_master_layer_height>
+<default_clips_color>
+22
+0.3 0.3 0.3 0.741176470588 0 0.0627450980392 0.3 0.3 0.3 0.188235294118 0.360784313725 0.941176470588 0.3 0.3 0.3 0.298039215686 0.619607843137 0.0509803921569 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.662745098039 0.41568627451 1 0.3 0.3 0.3 0.3 0.3 0.3 0.498039215686 0.274509803922 0.419607843137 0.878431372549 0.470588235294 0.156862745098 0.3 0.3 0.3 0.862745098039 0.792156862745 0 0.678431372549 0.0117647058824 0.623529411765 0.3 0.3 0.3 0.0509803921569 0.658823529412 0.658823529412 0.137254901961 0 0.741176470588 0.627450980392 0.254901960784 0.0509803921569 0.0470588235294 0.760784313725 0.533333333333 
+</default_clips_color>
+<sequence_show_time>
+<time>
+<usec> 7200000000 </usec>
+</time>
+
+</sequence_show_time>
+<composition_show_time>
+<time>
+<usec> 300000000 </usec>
+</time>
+
+</composition_show_time>
+<region_show_time>
+<time>
+<usec> 120000000 </usec>
+</time>
+
+</region_show_time>
+<clip_show_time>
+<time>
+<usec> 0 </usec>
+</time>
+
+</clip_show_time>
+<global_free_run>
+0
+</global_free_run>
+<time_code_sync_max_frame_offset>
+2
+</time_code_sync_max_frame_offset>
+<audio_sync_max_frame_offset>
+2
+</audio_sync_max_frame_offset>
+<freerun_sync_max_frame_offset>
+2
+</freerun_sync_max_frame_offset>
+<default_media_play_mode>
+0
+</default_media_play_mode>
+<default_media_volume>
+0
+</default_media_volume>
+<keep_media_resolution>
+0
+</keep_media_resolution>
+<is_current_sequence_selection_locked>
+0
+</is_current_sequence_selection_locked>
+</show_interface>
+
+</show_interface>
+<data_cue_interface>
+<cue_interface>
+<cue_interface_container>
+<cue_container>
+<cue_list_size>
+0
+</cue_list_size>
+<cue_list>
+</cue_list>
+</cue_container>
+
+</cue_interface_container>
+<cue_interface_cuelist>
+<media_playlist_interface>
+<current_playlist>
+500
+</current_playlist>
+<next_playlist_id>
+1
+</next_playlist_id>
+</media_playlist_interface>
+
+</cue_interface_cuelist>
+<widget_view_mode>
+1
+</widget_view_mode>
+<last_full_widget_width>
+900
+</last_full_widget_width>
+<cue_interface_size>
+180 412
+</cue_interface_size>
+</cue_interface>
+</data_cue_interface>
+<slac_v2>
+<slac>
+<current_preset_index> 0 </current_preset_index>
+<preset_list_iter>
+<slac_preset>
+<name>
+Slac State
+</name>
+<id>
+-1
+</id>
+<selected_slac_data_index>
+-1
+</selected_slac_data_index>
+<light_sep> 10 </light_sep>
+<max_error> 5 </max_error>
+<min_d> 0 </min_d>
+<cam_delay> 250 </cam_delay>
+<proj_intensity> 100 </proj_intensity>
+<sl_window> 5 </sl_window>
+<frame_exposure> 2 </frame_exposure>
+<filtering_ratio> 0.5 </filtering_ratio>
+<filtering_count> 0 </filtering_count>
+<resolution> 512 </resolution>
+<code_resolution> 64 </code_resolution>
+<filtering> 0 </filtering>
+<use_pj_clip> 1 </use_pj_clip>
+<use_cam_calib> 1 </use_cam_calib>
+<async_mode> 0 </async_mode>
+<calib_points_mode> 1 </calib_points_mode>
+<input_calib_mode> 2 </input_calib_mode>
+<apply_calib_mode> 1 </apply_calib_mode>
+<pattern_mode> 1 </pattern_mode>
+<lsd> <lssd>
+<outlier_detection>
+0
+</outlier_detection>
+<minimal_range>
+0
+</minimal_range>
+<expected_count>
+6
+</expected_count>
+<min_inlier_distance>
+0.005
+</min_inlier_distance>
+<light_sensor_mode>
+2
+</light_sensor_mode>
+<light_sensor_tolerance>
+5
+</light_sensor_tolerance>
+<ransac_options>
+<ransac_options>
+<min_points>
+6
+</min_points>
+<min_inliers>
+6
+</min_inliers>
+<max_iterations>
+20
+</max_iterations>
+</ransac_options>
+
+</ransac_options>
+</lssd>
+ </lsd>
+<spws> <sws>
+<sp_id>
+-1
+</sp_id>
+<msc>
+10000
+</msc>
+<res>
+30
+</res>
+<min_rc>
+2
+</min_rc>
+<min_ra>
+15
+</min_ra>
+<min_rl>
+1
+</min_rl>
+<max_rl>
+50
+</max_rl>
+<model_name>
+
+</model_name>
+<mvm>
+0
+</mvm>
+</sws>
+ </spws>
+</slac_preset>
+
+</preset_list_iter>
+<ground_plane_id>
+-1
+</ground_plane_id>
+</slac>
+
+</slac_v2>
+<mappings>
+<mapping_manager>
+
+<current_preset_id>
+0
+</current_preset_id>
+
+<next_generate_preset_id>
+1
+</next_generate_preset_id>
+
+<global_preset>
+<mapping_preset>
+
+<name>
+Global Mappings
+</name>
+
+<id>
+0
+</id>
+
+<next_generate_mapping_data_id>
+0
+</next_generate_mapping_data_id>
+</mapping_preset>
+
+</global_preset>
+
+<mapping_widget_size>
+1004 150
+</mapping_widget_size>
+</mapping_manager>
+
+</mappings>
+<scene_graph>
+<sg>
+<root_primitive>
+<null_primitive>
+<base>
+<primitive>
+<model_name>
+
+</model_name>
+<label>
+
+</label>
+<init_pose>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</init_pose>
+<pose_matrix>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</pose_matrix>
+<transformation_freeze>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</transformation_freeze>
+<translation_abs>
+0 0 0
+</translation_abs>
+<scale_abs>
+1 1 1
+</scale_abs>
+<rotation_abs>
+0 0 0
+</rotation_abs>
+<axis_rotation>
+1 1 1
+</axis_rotation>
+<axis_rotation_angle>
+0
+</axis_rotation_angle>
+<scale_freeze>
+1 1 1
+</scale_freeze>
+<tco>
+0 0 0
+</tco>
+<translation_offset>
+0 0 0
+</translation_offset>
+<rotation_offset>
+0 0 0
+</rotation_offset>
+<rotation_angle_offset>
+0
+</rotation_angle_offset>
+<tex_transfer_start>
+0 0
+</tex_transfer_start>
+<tex_transfer_end>
+1 1
+</tex_transfer_end>
+<opacity>
+1
+</opacity>
+<silhouette_opacity>
+0
+</silhouette_opacity>
+<silhouette_pj_size>
+0
+</silhouette_pj_size>
+<max_speed_t>
+5
+</max_speed_t>
+<max_acc_t>
+2
+</max_acc_t>
+<max_speed_r>
+5
+</max_speed_r>
+<max_acc_r>
+2
+</max_acc_r>
+<max_speed_s>
+5
+</max_speed_s>
+<max_acc_s>
+2
+</max_acc_s>
+<v_radius>
+0.5
+</v_radius>
+<v_sigma>
+0.1
+</v_sigma>
+<v_gauss_norm>
+1
+</v_gauss_norm>
+<v_fade_time>
+1
+</v_fade_time>
+<v_max_passive_distance>
+0
+</v_max_passive_distance>
+<v_max_track>
+3
+</v_max_track>
+<v_tracking>
+0
+</v_tracking>
+<id>
+0
+</id>
+<normalize_tex>
+0
+</normalize_tex>
+<fade_bbox>
+-1
+</fade_bbox>
+<silh_aa>
+1
+</silh_aa>
+<model_culling>
+0
+</model_culling>
+<front_face_culling>
+0
+</front_face_culling>
+<sel>
+0
+</sel>
+<sel_anim>
+0
+</sel_anim>
+<rse>
+0
+</rse>
+<ipt>
+0
+</ipt>
+<id_version>
+1
+</id_version>
+<pix_res>
+1920 1080
+</pix_res>
+<smd>
+
+</smd>
+<adl_iter>
+<automation_data>
+<id> -1 </id>
+<axis> 0 </axis>
+<src_v1> 0 </src_v1>
+<src_v2> 1 </src_v2>
+<axis_v1> 0 </axis_v1>
+<axis_v2> 1 </axis_v2>
+<active> 1 </active>
+<ad_id> 1 </ad_id>
+<clamp_enable> 0 </clamp_enable>
+<curve_interpolation_enable> 0 </curve_interpolation_enable>
+<curve_interpolation_v2> <curve_interface>
+<control_points_size> 2</control_points_size>
+<control_point_iter> <control_point>
+<position> 0 0 </position>
+<ease_in> 0 0 </ease_in>
+<ease_out> 0.333333 0.333333 </ease_out>
+<draw_ease_in> 0 0 </draw_ease_in>
+<draw_ease_out> 0 0 </draw_ease_out>
+<ease_angle> 3.14159265359 </ease_angle>
+<selected> 0 </selected>
+<interpolation> 1 </interpolation>
+<id> 0 </id>
+</control_point>
+ </control_point_iter>
+<control_point_iter> <control_point>
+<position> 1 1 </position>
+<ease_in> 0.666666 0.666666 </ease_in>
+<ease_out> 1 1 </ease_out>
+<draw_ease_in> 0 0 </draw_ease_in>
+<draw_ease_out> 0 0 </draw_ease_out>
+<ease_angle> 3.14159265359 </ease_angle>
+<selected> 0 </selected>
+<interpolation> 1 </interpolation>
+<id> 1 </id>
+</control_point>
+ </control_point_iter>
+</curve_interface>
+ </curve_interpolation_v2>
+</automation_data>
+
+</adl_iter>
+<current_ad_id>
+1
+</current_ad_id>
+<ucsx>
+0
+</ucsx>
+<ucsy>
+0
+</ucsy>
+<csbbti>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</csbbti>
+<csbbm>
+4 0 0 0 1 1 1 1 0 
+
+</csbbm>
+<csbbo>
+0 0
+</csbbo>
+<primitive_pski>
+<pski_save>
+<key_type>
+0
+</key_type>
+<pski_iter>
+<name>
+Preset 1
+</name>
+<id> 1 </id>
+<scale>
+1 1 1
+</scale>
+<translate>
+0 0 0
+</translate>
+<rotate>
+0 0 0
+</rotate>
+<axis_rotate_angle>
+0
+</axis_rotate_angle>
+<opacity>
+1
+</opacity>
+<opacity_dur>
+2
+</opacity_dur>
+</pski_iter>
+<current_id>
+1
+</current_id>
+<auto_save_locked>
+0
+</auto_save_locked>
+</pski_save>
+
+</primitive_pski>
+<ambiant_c>
+0.1 0.1 0.1
+</ambiant_c>
+<diffuse_c>
+0.9 0.9 0.9
+</diffuse_c>
+<specular_c>
+0 0 0
+</specular_c>
+<specular_decay>
+0.1
+</specular_decay>
+<children>
+<child_iter>
+<key> 1 </key>
+<type>
+0
+</type>
+<data>
+<object_2>
+<obj_prim>
+<primitive>
+<model_name>
+Banq.obj
+</model_name>
+<label>
+Banq.obj
+</label>
+<init_pose>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</init_pose>
+<pose_matrix>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</pose_matrix>
+<transformation_freeze>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</transformation_freeze>
+<translation_abs>
+0 0 0
+</translation_abs>
+<scale_abs>
+1 1 1
+</scale_abs>
+<rotation_abs>
+0 0 0
+</rotation_abs>
+<axis_rotation>
+1 1 1
+</axis_rotation>
+<axis_rotation_angle>
+0
+</axis_rotation_angle>
+<scale_freeze>
+1 1 1
+</scale_freeze>
+<tco>
+0 0 0
+</tco>
+<translation_offset>
+0 0 0
+</translation_offset>
+<rotation_offset>
+0 0 0
+</rotation_offset>
+<rotation_angle_offset>
+0
+</rotation_angle_offset>
+<tex_transfer_start>
+0 0
+</tex_transfer_start>
+<tex_transfer_end>
+1 1
+</tex_transfer_end>
+<opacity>
+1
+</opacity>
+<silhouette_opacity>
+0
+</silhouette_opacity>
+<silhouette_pj_size>
+0
+</silhouette_pj_size>
+<max_speed_t>
+5
+</max_speed_t>
+<max_acc_t>
+2
+</max_acc_t>
+<max_speed_r>
+5
+</max_speed_r>
+<max_acc_r>
+2
+</max_acc_r>
+<max_speed_s>
+5
+</max_speed_s>
+<max_acc_s>
+2
+</max_acc_s>
+<v_radius>
+0.5
+</v_radius>
+<v_sigma>
+0.1
+</v_sigma>
+<v_gauss_norm>
+1
+</v_gauss_norm>
+<v_fade_time>
+1
+</v_fade_time>
+<v_max_passive_distance>
+0
+</v_max_passive_distance>
+<v_max_track>
+3
+</v_max_track>
+<v_tracking>
+0
+</v_tracking>
+<id>
+1
+</id>
+<normalize_tex>
+0
+</normalize_tex>
+<fade_bbox>
+-1
+</fade_bbox>
+<silh_aa>
+1
+</silh_aa>
+<model_culling>
+0
+</model_culling>
+<front_face_culling>
+0
+</front_face_culling>
+<sel>
+1
+</sel>
+<sel_anim>
+0
+</sel_anim>
+<rse>
+0
+</rse>
+<ipt>
+0
+</ipt>
+<id_version>
+1
+</id_version>
+<pix_res>
+1920 1080
+</pix_res>
+<smd>
+
+</smd>
+<adl_iter>
+<automation_data>
+<id> -1 </id>
+<axis> 0 </axis>
+<src_v1> 0 </src_v1>
+<src_v2> 1 </src_v2>
+<axis_v1> 0 </axis_v1>
+<axis_v2> 1 </axis_v2>
+<active> 1 </active>
+<ad_id> 2 </ad_id>
+<clamp_enable> 0 </clamp_enable>
+<curve_interpolation_enable> 0 </curve_interpolation_enable>
+<curve_interpolation_v2> <curve_interface>
+<control_points_size> 2</control_points_size>
+<control_point_iter> <control_point>
+<position> 0 0 </position>
+<ease_in> 0 0 </ease_in>
+<ease_out> 0.333333 0.333333 </ease_out>
+<draw_ease_in> 0 0 </draw_ease_in>
+<draw_ease_out> 0 0 </draw_ease_out>
+<ease_angle> 3.14159265359 </ease_angle>
+<selected> 0 </selected>
+<interpolation> 1 </interpolation>
+<id> 0 </id>
+</control_point>
+ </control_point_iter>
+<control_point_iter> <control_point>
+<position> 1 1 </position>
+<ease_in> 0.666666 0.666666 </ease_in>
+<ease_out> 1 1 </ease_out>
+<draw_ease_in> 0 0 </draw_ease_in>
+<draw_ease_out> 0 0 </draw_ease_out>
+<ease_angle> 3.14159265359 </ease_angle>
+<selected> 0 </selected>
+<interpolation> 1 </interpolation>
+<id> 1 </id>
+</control_point>
+ </control_point_iter>
+</curve_interface>
+ </curve_interpolation_v2>
+</automation_data>
+
+</adl_iter>
+<current_ad_id>
+2
+</current_ad_id>
+<ucsx>
+0
+</ucsx>
+<ucsy>
+0
+</ucsy>
+<csbbti>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</csbbti>
+<csbbm>
+4 0 0 0 1 1 1 1 0 
+
+</csbbm>
+<csbbo>
+0 0
+</csbbo>
+<primitive_pski>
+<pski_save>
+<key_type>
+0
+</key_type>
+<pski_iter>
+<name>
+Preset 1
+</name>
+<id> 1 </id>
+<scale>
+1 1 1
+</scale>
+<translate>
+0 0 0
+</translate>
+<rotate>
+0 0 0
+</rotate>
+<axis_rotate_angle>
+0
+</axis_rotate_angle>
+<opacity>
+1
+</opacity>
+<opacity_dur>
+2
+</opacity_dur>
+</pski_iter>
+<current_id>
+1
+</current_id>
+<auto_save_locked>
+0
+</auto_save_locked>
+</pski_save>
+
+</primitive_pski>
+<ambiant_c>
+0.1 0.1 0.1
+</ambiant_c>
+<diffuse_c>
+0.9 0.9 0.9
+</diffuse_c>
+<specular_c>
+0 0 0
+</specular_c>
+<specular_decay>
+0.1
+</specular_decay>
+<children>
+</children>
+<children_collapsed>
+0
+</children_collapsed>
+
+</primitive>
+</obj_prim>
+<blending_threshold>
+0
+</blending_threshold>
+<blending_transition_time>
+1
+</blending_transition_time>
+<blending_transition_threshold>
+0
+</blending_transition_threshold>
+<blend_mode>
+0
+</blend_mode>
+<ignore_blending>
+0
+</ignore_blending>
+<normal_based_blending>
+0
+</normal_based_blending>
+<normal_culling>
+0
+</normal_culling>
+<normal_invert>
+0
+</normal_invert>
+<swap_zy>
+0
+</swap_zy>
+<tex_repeat>
+0
+</tex_repeat>
+<shadow_check>
+1
+</shadow_check>
+<center_pivot>
+1
+</center_pivot>
+<splitting>
+0
+</splitting>
+<comp_blend_mode>
+0
+</comp_blend_mode>
+<convergence>
+1
+</convergence>
+<calibration_texture_name>
+default
+</calibration_texture_name>
+<display_mode>
+0
+</display_mode>
+<hierarchy_mode>
+0
+</hierarchy_mode>
+<preview_transformation>
+0
+</preview_transformation>
+
+</object_2>
+
+</data>
+</child_iter>
+</children>
+<children_collapsed>
+0
+</children_collapsed>
+
+</primitive>
+</base>
+<lt_id>
+-1
+</lt_id>
+
+</null_primitive>
+
+</root_primitive>
+<world_size>
+20 20 20
+</world_size>
+
+<automation>
+<automation>
+<port> 55510 </port>
+<multicast_enabled> 0 </multicast_enabled>
+<multicast_addr>
+239.195.0.1
+</multicast_addr>
+<network_id> 0 </network_id>
+<mode> 0 </mode>
+<protocol_name>
+
+</protocol_name>
+<extrapolation> 0 </extrapolation>
+<latency> 0 </latency>
+<active> 1 </active>
+<pos_filter> 0 </pos_filter>
+<pos_treshold> 0 </pos_treshold>
+<update_rate> 10 </update_rate>
+<update_rate_treshold> 0 </update_rate_treshold>
+<adaptive_filtering> 0 </adaptive_filtering>
+<speed_threshold> 0.3 </speed_threshold>
+<sigma> 1.05 </sigma>
+</automation>
+
+</automation>
+
+<sg_ui>
+<sg_ui_data>
+<selected_sg_model> -1 </selected_sg_model>
+<selected_reference_model> -1 </selected_reference_model>
+<selected_calibration_display_id> -1 </selected_calibration_display_id>
+<task_mode>
+0
+</task_mode>
+<sg_tm>
+3
+</sg_tm>
+<view_control> <view_control>
+<frame> 1 0 0 -0.349070617323
+0 1 0 0.20400258079
+0 0 1 2.637610572 </frame>
+<pan> 0.070398163397 </pan>
+<tilt> -0.11547970867 </tilt>
+<distance> 2.42893605712 </distance>
+<view_eye> -0.349070617323 0.20400258079 2.637610572 </view_eye>
+<view_look_at> -0.518784118015 -0.0758672413805 0.2308283675 </view_look_at>
+<view_up_vector> 0 1 0 </view_up_vector>
+<up_vector_locked> 1 </up_vector_locked>
+<c_offset> 0 0 </c_offset>
+<view_fovy> 53 </view_fovy>
+<ortho_width> 20 </ortho_width>
+<ortho_height> 15.9798994975 </ortho_height>
+<view_aspect_ratio> 1.25157232704 </view_aspect_ratio>
+ <pyramid_length> 0.5 </pyramid_length>
+ <max_plength> 0 </max_plength>
+ <portrait_mode> 0 </portrait_mode>
+ <projection_mode> 0 </projection_mode>
+ <fmin> 0 </fmin>
+ <fmax> 0 </fmax>
+ <gl_near> 0.1 </gl_near>
+ <gl_far> 500 </gl_far>
+ <prim_ref_id> -1 </prim_ref_id>
+ <calib_interface> <calibration_3d_interface>
+<points_3d_size> 0 </points_3d_size>
+<current_point> 0 </current_point>
+<pose_transform> 1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1 </pose_transform>
+<pose_inv> 1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1 </pose_inv>
+<affine_matrix>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</affine_matrix>
+
+<affine_inverse_matrix>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</affine_inverse_matrix>
+
+<gl_projection_matrix>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</gl_projection_matrix>
+
+<gl_modelview_matrix>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+</gl_modelview_matrix>
+<is_3D> 0 </is_3D>
+<calibration_mode> 0 </calibration_mode>
+<linked_fixture_id> -1 </linked_fixture_id>
+<c_err> -1 </c_err>
+<p_err> -1 </p_err>
+<points_3d_list>
+
+</points_3d_list>
+<pixels_list>
+
+</pixels_list>
+<is_active_list>
+
+</is_active_list>
+<plan_projection>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1</plan_projection>
+<transformation_freeze>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1</transformation_freeze>
+ <lens_K1> 0 </lens_K1>
+ <lens_K2> 0 </lens_K2>
+ <has_lens_shift> 1 </has_lens_shift>
+ <lens_shift> 0 0 </lens_shift>
+ <pixel_width> 1 </pixel_width>
+ <priors_position_reference_id> -1 </priors_position_reference_id>
+ <priors_transformation_selection> 1 </priors_transformation_selection>
+ <priors_position> 0 0 0 </priors_position>
+ <priors_orientation> 1 0 0
+0 1 0
+0 0 1 </priors_orientation>
+ <priors_position_deviation> 1 </priors_position_deviation>
+ <priors_orientation_deviation> 0.785398163397 </priors_orientation_deviation>
+ <priors_focal_mode> 0 </priors_focal_mode>
+ <priors_focal_length> 1 </priors_focal_length>
+ <priors_focal_length_deviation> 0.5 </priors_focal_length_deviation>
+ <priors_use_lens_shift> 0 </priors_use_lens_shift>
+ <priors_lens_shift> 0 0 </priors_lens_shift>
+ <priors_lens_shift_deviation> 0.5 0.5 </priors_lens_shift_deviation>
+ <lens_distortion> 0 </lens_distortion>
+ <priors_lens_distortion> 0 0 </priors_lens_distortion>
+ <priors_lens_distortion_deviation> 0.5 0.5 </priors_lens_distortion_deviation>
+ <priors_role> 0 </priors_role>
+<passive_reference>
+0
+</passive_reference>
+ <version> 2 </version>
+</calibration_3d_interface>
+ </calib_interface>
+<vis_iter_v2>
+<fix_data>
+
+<name>
+Fixture Preset
+</name>
+
+<id>
+-1
+</id>
+
+<pan>
+0
+</pan>
+
+<tilt_v2>
+0
+</tilt_v2>
+<pee>
+0</pee>
+<pe>
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1</pe>
+<bpd>
+<blending_parameters_data>
+<brightness> 0 </brightness> <contrast> 1 </contrast> <proj_gamma_new> 1</proj_gamma_new>
+<alpha_brightness> 0 </alpha_brightness> <alpha_contrast> 1 </alpha_contrast> <alpha_gamma_new> 2.2 </alpha_gamma_new> <alpha_blend_1> 1 </alpha_blend_1>  <black_level> 0 </black_level>  <alpha_offset_x> 0 </alpha_offset_x>  <alpha_offset_y> 0 </alpha_offset_y>  <black_level_gamma> 2 </black_level_gamma> </blending_parameters_data>
+
+</bpd>
+</fix_data>
+
+</vis_iter_v2>
+</view_control>
+ </view_control>
+<show_grid> 1 </show_grid>
+<show_axis> 1 </show_axis>
+<view_size> 640 640 </view_size>
+<rendering_mode> 3 </rendering_mode>
+<sg_cdo> <cdo>
+<display_grid>
+0
+</display_grid>
+<display_ident>
+0
+</display_ident>
+<display_zoom>
+0
+</display_zoom>
+<display_preview>
+1
+</display_preview>
+<p3d_size>
+8
+</p3d_size>
+<p2d_size>
+4
+</p2d_size>
+<line_width>
+1
+</line_width>
+<window_zoom>
+1
+</window_zoom>
+<display_calib_cross>
+1
+</display_calib_cross>
+<display_calib_line>
+1
+</display_calib_line>
+<lock_control>
+0
+</lock_control>
+<bg_color>
+1 0 0
+</bg_color>
+<mesh_color>
+1 1 1
+</mesh_color>
+<cross_color>
+0 1 0
+</cross_color>
+<sel_cross_color>
+1 1 1
+</sel_cross_color>
+<display_ident_text>
+1
+</display_ident_text>
+<display_ident_dot>
+1
+</display_ident_dot>
+<gradient_show_positions>
+0
+</gradient_show_positions>
+<gradient_fuzzyness>
+1
+</gradient_fuzzyness>
+<solid_color>
+1 1 1
+</solid_color>
+<gradient_src_color>
+1 1 1
+</gradient_src_color>
+<gradient_src_pos>
+0.25 0.5
+</gradient_src_pos>
+<gradient_dst_color>
+0 0 0
+</gradient_dst_color>
+<gradient_dst_pos>
+0.75 0.5
+</gradient_dst_pos>
+<output_type>
+0
+</output_type>
+<test_pattern>
+0
+</test_pattern>
+<gradient_type>
+0
+</gradient_type>
+</cdo>
+ </sg_cdo>
+<sg_fvs> 440 342 </sg_fvs>
+<search_filter>
+
+</search_filter>
+<search_display_filter>
+
+</search_display_filter>
+<sav>
+0
+</sav>
+<pss>
+<pss>
+<mode> 1 </mode>
+<lmin> 10 </lmin>
+<lmax> 500 </lmax>
+</pss>
+
+</pss>
+<v3vwm>
+0
+</v3vwm>
+<vcom>
+0
+</vcom>
+<ps_bg>
+1 1 1
+</ps_bg>
+<o_bg>
+0 0 0.15
+</o_bg>
+<m_bg>
+0.2 0.2 0.2
+</m_bg>
+<twister_sigma>
+0
+</twister_sigma>
+</sg_ui_data>
+
+</sg_ui>
+
+<sg_animation_key_interface>
+ <spi>
+  <cur> 0 </cur> 
+ <auto_save_locked> 0 </auto_save_locked> 
+
+<blending_interface>
+<bi>
+<bo>
+<blending_options>
+<preset_mix_time> 0 </preset_mix_time>
+<mask_width> 512 </mask_width>
+<mask_height> 512 </mask_height>
+ <blending_blur> 0 </blending_blur>
+ <blending_zone_size> 0 </blending_zone_size>
+ <enable_blending> 1 </enable_blending>
+<blending_type> 7 </blending_type>
+<show_blending_debug> 0 </show_blending_debug>
+</blending_options>
+</bo>
+
+</bi>
+
+</blending_interface>
+
+<new_preset_name>
+
+</new_preset_name>
+
+<pfod>
+0
+</pfod>
+
+<pfid>
+0
+</pfid>
+
+<pbd>
+0
+</pbd>
+
+<caci>
+0
+</caci>
+<spi_sp_iter>
+<ssk>
+<ssk_name>
+Scene Preset 0
+</ssk_name>
+<ssk_id>
+0
+</ssk_id>
+<sak_data_iter_v2>
+<sakd>
+<sg_id>
+1
+</sg_id>
+<primitive_animation_key_id>
+1
+</primitive_animation_key_id>
+<fix_preset_id>
+-1
+</fix_preset_id>
+<bpd>
+<blending_parameters_data>
+<brightness> 0 </brightness> <contrast> 1 </contrast> <proj_gamma_new> 1</proj_gamma_new>
+<alpha_brightness> 0 </alpha_brightness> <alpha_contrast> 1 </alpha_contrast> <alpha_gamma_new> 2.2 </alpha_gamma_new> <alpha_blend_1> 1 </alpha_blend_1>  <black_level> 0 </black_level>  <alpha_offset_x> 0 </alpha_offset_x>  <alpha_offset_y> 0 </alpha_offset_y>  <black_level_gamma> 2 </black_level_gamma> </blending_parameters_data>
+
+</bpd>
+<spd>
+<slac_preset_data>
+<name>
+Slac Preset Data
+</name>
+<id>
+-1
+</id>
+<input_id>
+-1
+</input_id>
+<input_li>
+-1
+</input_li>
+<input_preset_id>
+-1
+</input_preset_id>
+<auto_calibrate_input>
+1
+</auto_calibrate_input>
+<append_calib_points>
+0
+</append_calib_points>
+<input_settings>
+<slac_input_settings>
+<gain>
+0
+</gain>
+<ir_power>
+0
+</ir_power>
+<threshold>
+150
+</threshold>
+<frame_rate>
+180
+</frame_rate>
+<exposure>
+500
+</exposure>
+<video_mode>
+7
+</video_mode>
+<ir_filter>
+1
+</ir_filter>
+<track_copernics>
+1
+</track_copernics>
+</slac_input_settings>
+
+</input_settings>
+<output_settings>
+<slac_input_settings>
+<gain>
+0
+</gain>
+<ir_power>
+0
+</ir_power>
+<threshold>
+0
+</threshold>
+<frame_rate>
+60
+</frame_rate>
+<exposure>
+4000
+</exposure>
+<video_mode>
+1
+</video_mode>
+<ir_filter>
+0
+</ir_filter>
+<track_copernics>
+0
+</track_copernics>
+</slac_input_settings>
+
+</output_settings>
+<recon_settings>
+<slac_input_settings>
+<gain>
+0
+</gain>
+<ir_power>
+15
+</ir_power>
+<threshold>
+150
+</threshold>
+<frame_rate>
+180
+</frame_rate>
+<exposure>
+500
+</exposure>
+<video_mode>
+7
+</video_mode>
+<ir_filter>
+1
+</ir_filter>
+<track_copernics>
+1
+</track_copernics>
+</slac_input_settings>
+
+</recon_settings>
+</slac_preset_data>
+
+</spd>
+</sakd>
+
+</sak_data_iter_v2>
+</ssk>
+</spi_sp_iter>
+</spi>
+</sg_animation_key_interface>
+
+<next_ad_id>
+3
+</next_ad_id>
+
+<next_primitive_id>
+2
+</next_primitive_id>
+</sg>
+
+</scene_graph>
+<undo_manager>
+<undo_manager>
+<undoable_obj_iter>
+<type_id>
+Global
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+Color Correction
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+Clip_Editor
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+Timeline
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+Keyframe_Editor
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+Preview_Window
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+FX Graph
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+Cue_Editor
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+3D_Scene
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+UI
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+<undoable_obj_iter>
+<type_id>
+File_Manager
+</type_id>
+<is_enabled>
+1
+</is_enabled>
+
+</undoable_obj_iter>
+</undo_manager>
+
+</undo_manager>
+<albion_master>
+
+</albion_master>
+<local_network_id>
+0
+</local_network_id>
+<autocalib_master>
+
+</autocalib_master>
+<dmx_master>
+
+</dmx_master>
+<io_master>
+
+</io_master>
+<accurate_vsync>
+0
+</accurate_vsync>
+<vsync_fps>
+60
+</vsync_fps>
+<gl_threaded>
+0
+</gl_threaded>
+<gsync_time>
+0
+</gsync_time>
+<autosave_enable>
+0
+</autosave_enable>
+<autosave_frequency>
+5
+</autosave_frequency>
+<log_manager>
+<logs_module>
+<active_clients_list_size>
+0
+</active_clients_list_size>
+</logs_module>
+</log_manager>
+</data>
+F2939F2F-B7F6-4AAF-B9D1-DAC84C6A6696

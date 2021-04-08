@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+    background-color: rgb(189, 189, 189);
+}
+
+
+
+.clickableThingy{
+  cursor:pointer;
+  color:#333;
+}
+.clickableThingy:hover{
+  color:#b88;
+}
+
+.wrapper {
+    width: 100vw;
+    margin: 0 auto;
+    display:flex;
+    justify-content:space-around;
+}
+
+.sides{
+  width:45vw;
+  height:95vh;
+}
+
+.inputform{
+  width:20px;
+}
+.scrollsection{
+  overflow-y:scroll;
+}
