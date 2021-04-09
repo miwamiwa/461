@@ -38,11 +38,11 @@ function microphoneProcess(e) {
 
   // send to buffer for file saving:
 
-  leftchannel.push(new Float32Array(data));
-  rightchannel.push(new Float32Array(data));
+  //leftchannel.push(new Float32Array(data));
+  //rightchannel.push(new Float32Array(data));
   // if stereo:
   //  rightchannel.push(new Float32Array(e.inputBuffer.getChannelData(1)));
-  recordingLength += bufferSize;
+  //recordingLength += bufferSize;
 
   // create another buffer and emit via sockets:
 
@@ -109,6 +109,9 @@ function stopRecording() {
 
   // audiovideostream.stop();
   // videoElement.srcObject = null;
-  recordToWav();
-  saveBuffer();
+
+
+  
+  //recordToWav();
+  //saveBuffer();
 }

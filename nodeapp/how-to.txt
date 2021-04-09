@@ -1,0 +1,25 @@
+setup:
+1. install node-js
+2. get the json file with your google cloud service account's credentials,
+with google cloud speech activated on that service account's project.
+2.1. create a file called .env in this directory (nodeapp) and add the 4 lines
+below. Be sure to add in the info from your own google service account json file
+in the last three lines. This file won't be pushed to github, since the gitignore
+is set to avoid .env files.
+
+PORT=1337
+
+GOOGLE_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----\nblablablablablablabla...blablablabla\n-----END PRIVATE KEY-----\n
+
+PROJECT_ID=googleproject-name-123456
+
+GOOGLE_CLIENT_EMAIL=myserviceaccount@gooogleproject-name-123456.iam.gserviceaccount.com
+
+to start:
+1. open the command prompt
+2. reach this folder: cd localpath/461/nodeapp
+3. start the app: node app.js
+4. the front end can be accessed from the browser at http://127.0.0.1:1337/
+
+if using the argon for input, make sure it knows your private ip (10.0.x.x or 192.168.x.x)
+(setup in argon/tcpaudio/src/tcpaudio.ino)
