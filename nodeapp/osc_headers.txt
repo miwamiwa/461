@@ -1,0 +1,14 @@
+[a list of the kinds of osc messages that this app will send out]
+
+/ritaresult (string)
+result of a successful rita generation
+
+/finaltranscript (string)
+final gcloud transcript (on mic input end)
+
+/livetranscript (string)
+live gcloud transcripts (while mic is active)
+
+/micstart
+
+/micstop

@@ -19,6 +19,16 @@ const speechClient = new speech.SpeechClient({
   }
 });
 
+// -------give me rita!
+let RiTa = require('rita');
+let rm;
+let markovready=false;
+
+function setupMarkov(){
+  rm = new RiTa.markov(2);
+}
+
+setupMarkov();
 // ------------------ file saving stuff
 
 var fs = require('fs');
@@ -28,8 +38,12 @@ let importList;
 let importDone = false;
 
 // get any index data already on file
-fs.readFile('text_files/index.txt', (error, txtString) => {
-  if (error) throw err;
+fs.readFile('out/index.txt', (error, txtString) => {
+  if (error){
+    console.log("no index file!")
+    console.log("moving on anyway chief");
+    return;
+  }
 
   let str = txtString.toString();
   let arr= str.split('\n');
@@ -55,29 +69,68 @@ function importImportList(){
   let file = importList[0];
   importList.shift();
 
-  fs.readFile('text_files/'+file+'.txt',"ascii", (error, txtString) => {
+  fs.readFile('out/'+file+'.txt',"ascii", (error, txtString) => {
     if (error) throw err;
 
     let str = txtString.toString();
-    let arr= str.split('\n');
+    let arr= str.split('###');
+
+    let dataobj = {}
     // buffer save data
 
-    while(str.indexOf("\n")!=-1)
-      str =str.replace("\n"," ")
+    while(arr[0].indexOf("\n")!=-1)
+      arr[0] =arr[0].replace("\n"," ")
 
-    saveData[file]=str;
+      // add to save data buffer
+    dataobj.phrase = arr[0];
+
+    // get timestamp data
+    dataobj.timeStamps = [];
+    let stamps = arr[1].split("\n");
+    for(let i=0; i<stamps.length; i++){
+      let stamp = stamps[i].split(" ");
+      if(stamp[0]!="")
+      dataobj.timeStamps.push( {
+        start:stamp[1],
+        end:stamp[2],
+        word:stamp[0]
+      });
+    }
+
+
+    saveData[file] = dataobj;
+    // add string to markov model
+    rm.addText(dataobj.phrase);
 
     if(importList.length>0) setTimeout(importImportList,1);
     else importOver();
   });
-
-
 }
 
 function importOver(){
+
   console.log("import over!");
   console.log(saveData);
   importDone = true;
+
+  getrita();
+
+}
+
+async function getrita(){
+  try{
+    console.log("got rita:");
+    let result = rm.generate();
+    console.log(result);
+    //console.log("... that was the test. good job everybody.\n")
+    return result;
+
+  }
+  catch(error){
+    console.log("\nrita failed!")
+    console.log(error);
+    return false;
+  }
 }
 
 // -------------------------- tcp stuff and wav-saving stuff:
@@ -151,7 +204,7 @@ let oscReady = false;
 // start listening
 server2.on('listening', () => {
   oscReady = true;
-  console.log('OSC Server is listening.');
+  console.log('OSC Server is listening. lets gooooo');
 })
 
 // print any messages coming in thru osc
@@ -211,6 +264,20 @@ io.on('connection', function (client) {
     client.emit('broad', data);
   });
 
+  // send some rita generated text to front end
+  client.on('ritaRequest',function(){
+    let r = getrita();
+    // if we successfully generated something
+    if(r!=undefined&&r!=false){
+      // send answer back to front-end
+      client.emit("rita-result",r);
+      // send answer via osc too
+      sendOSCmess("/ritaresult",r);
+    }
+    // otherwise
+    else client.emit("rita-result","nada");
+  });
+
   // receive start/stop commands from the front-end:
 
   client.on('startGoogleCloudStream', function (data) {
@@ -223,31 +290,72 @@ io.on('connection', function (client) {
     // grab only the part witht the file number
     outPath=outPath.substring(outPath.indexOf(`out`)+4,outPath.indexOf(".wav"));
     stringBuffers[outPath] ="";
-    startRecognitionStream(this, outPath);
+    timestampBuffers[outPath] ="";
 
+    startRecognitionStream(this, outPath);
+    sendOSCmess("/micstart","start");
   });
 
+
+  // on stream-over request from front end
   client.on('endGoogleCloudStream', function () {
+
+    sendOSCmess("/micstop","stop");
     console.log("closed mic on front-end");
     stopRecognitionStream();
     writer.end(); // finish wav file
 
     // write text file with transcript info
-    fs.writeFile('text_files/'+outPath+'.txt', stringBuffers[outPath], (error) => {
+    fs.writeFile(
+      'out/'+outPath+'.txt',
+      stringBuffers[outPath] +"###"+ timestampBuffers[outPath],
+      (error) => {
       if (error) throw error;
     });
+
+    // add text to markov model
+    let combinedstring=stringBuffers[outPath].replace("\n"," ");
+    rm.addText(combinedstring);
 
     // update file index array
     fileIndex.push(outPath);
 
     // update file index files indexing file
     let str = fileIndex.join("\n");
-    fs.writeFile('text_files/index.txt', str, (error) => {
+    fs.writeFile('out/index.txt', str, (error) => {
       if(error) throw error;
     });
 
-    // empty string buffer
+    // update current data buffer
+
+    let dataobj = {}
+    // buffer save data
+
+
+      // add to save data buffer
+    dataobj.phrase = combinedstring;
+
+    // get timestamp data
+    dataobj.timeStamps = [];
+    let stamps = timestampBuffers[outPath].split("\n");
+    for(let i=0; i<stamps.length; i++){
+      let stamp = stamps[i].split(" ");
+      if(stamp[0]!="")
+      dataobj.timeStamps.push( {
+        start:stamp[1],
+        end:stamp[2],
+        word:stamp[0]
+      });
+    }
+
+
+    saveData[outPath] = dataobj;
+    console.log("updated buffer!")
+    console.log(saveData[outPath])
+
+    // empty  buffer
     stringBuffers[outPath]=undefined;
+    timestampBuffers[outPath]=undefined;
   });
 
   // funnel mic data from front end to g-cloud
@@ -294,23 +402,38 @@ function startRecognitionStream(tempclient,filepath) {
     if(tempclient!=undefined)
       tempclient.emit('speechData', data);
 
-    // send the most likely transcript through OSC
-    if(oscReady){
-      sendOSCmess("/test",data.results[0].alternatives[0].transcript);
-    }
+
 
     // if end of utterance, let's restart stream
     // this is a small hack. After 65 seconds of silence, the stream will still throw an error for speech length limit
     if (data.results[0] && data.results[0].isFinal) {
 
       stringBuffers[filepath] += data.results[0].alternatives[0].transcript + "\n";
+      // send the transcript via OSC
+      sendOSCmess("/finaltranscript",data.results[0].alternatives[0].transcript);
+
+      let stampstring="";
+      let words = data.results[0].alternatives[0].words;
+      for(let i=0; i<words.length; i++){
+        let word = words[i].word;
+        // start and end time baboom
+        let startTime = `${words[i].startTime.seconds}.${words[i].startTime.nanos}`;
+        let endTime = `${words[i].endTime.seconds}.${words[i].endTime.nanos}`;
+
+        stampstring += word+" "+startTime+" "+endTime+"\n";
+      }
+      timestampBuffers[filepath] += stampstring;
       stopRecognitionStream();
       startRecognitionStream(tempclient,filepath);
+    }
+    // if this isn't the final transcript, send thru OSC anyway
+    else if(oscReady){
+      sendOSCmess("/livetranscript",data.results[0].alternatives[0].transcript);
     }
   });
 }
 
-
+let timestampBuffers = [];
 
 // stopRecognitionStream()
 //
@@ -327,7 +450,7 @@ function stopRecognitionStream() {
 
 // start the socket.io server
 server.listen(port, "0.0.0.0", function () {
-  console.log('Server started on port:' + port);
+  console.log('socket io server started on port:' + port);
 });
 
 
@@ -389,20 +512,17 @@ net.createServer(function (socket) {
     }
 
     if (recognizeStream !== null) {
-      //let arr = new Int16Array(buf);
-      //console.log(buf);
-
       // SEND DATA TO G CLOUD
       recognizeStream.write(buf);
       process.stdout.write(".");
-      //console.log(buf);
     }
 
     tcpStreamStarted=true;
-
-    // console.log("got data " + (data.length / 2));
+    // add to wav buffer
     writer.write(buf);
   });
+
+  
   socket.on('end', function () {
     tcpStreamStarted=false;
     stopRecognitionStream();
