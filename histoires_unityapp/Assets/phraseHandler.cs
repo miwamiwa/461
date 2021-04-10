@@ -5,33 +5,55 @@ using UnityEngine;
 public class phraseHandler : MonoBehaviour
 {
     float vel = 0.08f;
-    string text= "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+    string text= "";
     GameObject[] chars;
     float offset = 0f;
     public GameObject templatechar;
     line line;
-    public GameObject lineobj;
-    public GameObject charContainer;
+    GameObject lineobj;
+    GameObject charContainer;
+    bool textReady = false;
+    bool objectsReady = false;
     // Start is called before the first frame update
     void Start()
     {
+                
+    }
+
+    public void SetObjects(GameObject inputline, GameObject outputbox)
+    {
+        lineobj = inputline;
         line = lineobj.GetComponent<line>();
 
+        charContainer = outputbox;
+        objectsReady = true;
+    }
+
+
+    public void SetText(string input)
+    {
+        text = input;
         int initfontsize = 26;
         chars = new GameObject[text.Length];
-        for(int i=0; i<text.Length; i++)
+        for (int i = 0; i < text.Length; i++)
         {
             chars[i] = Instantiate(templatechar);
             chars[i].transform.parent = charContainer.transform;
-            chars[i].GetComponent<charHandler>().setText(""+text[i]);
+            chars[i].GetComponent<charHandler>().setText("" + text[i]);
         }
+
+        textReady = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        followLine();
-        movePhrase();
+        if (textReady&&objectsReady)
+        {
+            followLine();
+            movePhrase();
+        }
+        
     }
 
     public void followLine()

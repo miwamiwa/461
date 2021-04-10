@@ -5,7 +5,7 @@ result of a successful rita generation
 
 /ritasources
 phrases that make up the last rita-generated phrase
-string, split by ### then by ##
+string, split by # then by @
 data=[[wordsInRitaPhrase,fullSourcePhrase],[wordsInRitaPhrase,fullSourcePhrase]]
 
 /finaltranscript (string)

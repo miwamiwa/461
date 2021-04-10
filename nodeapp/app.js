@@ -451,8 +451,8 @@ function seqBufferOver(phrase,clientinput){
   sendOSCmess("/ritaresult",phrase);
   let str = "";
   for(let i=0; i<seq.length; i++){
-    str+= seq[i].words+"##"+seq[i].sourcephrase;
-    if(i!=seq.length-1) str+="###";
+    str+= seq[i].words+"@"+seq[i].sourcephrase;
+    if(i!=seq.length-1) str+="#";
   }
   sendOSCmess("/ritasources",str);
 }
