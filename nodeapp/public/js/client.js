@@ -55,6 +55,8 @@ function serverRequest(input){
 
 
 //================= SOCKET IO =================
+
+// setup listeners
 socket.on('connect', function (data) {
   console.log('connected to socket');
   socket.emit('join', 'Server Connected to Client');
@@ -68,14 +70,30 @@ socket.on('rita-result', function (data) {
   console.log(data);
 
   if(data!="nada"){
-    let playButton=`<br><br> <input onclick="play()" id="playButton" type="button" value="Play" disabled="true"></input>`;
-    document.getElementById("promptBox").innerHTML=data.phrase + playButton;
+    updateprompt(data.phrase);
     loadSoundFileSequence(data.sequence);
+    playtype="sequence";
   }
   else document.getElementById("promptBox").innerHTML="no data :(";
 
+});
 
+socket.on("got-random-recording", function(data){
 
+  playtype="one-shot";
+  updateprompt(data.phrase);
+  audioFileBuffer = [];
+  audioFileBuffer.push(new Audio("assets/out/"+data.file+".wav"));
+  play();
+});
+
+socket.on("got-latest-recording", function(data){
+
+  playtype="one-shot";
+  updateprompt(data.phrase);
+  audioFileBuffer = [];
+  audioFileBuffer.push(new Audio("assets/out/"+data.file+".wav"));
+  play();
 });
 
 window.onbeforeunload = function () {
@@ -84,6 +102,12 @@ window.onbeforeunload = function () {
   }
 };
 
+let playtype = "sequence";
+
+function updateprompt(phrase){
+  let playButton=`<br><br> <input onclick="play()" id="playButton" type="button" value="Play" disabled="true"></input>`;
+  document.getElementById("promptBox").innerHTML=phrase + playButton;
+}
 
 // downsamplebuffer()
 //
@@ -194,5 +218,13 @@ function fadeAudio(audio){
 
 function play(){
   console.log("play!");
-  startSequence();
+  if(playtype=="sequence")
+    startSequence();
+  else if(playtype=="one-shot"){
+    audioFileBuffer[0].play();
+    document.getElementById("playButton").disabled = true;
+    setTimeout(function(){
+      document.getElementById("playButton").disabled = false;
+    }, audioFileBuffer[0].duration*1000);
+  }
 }

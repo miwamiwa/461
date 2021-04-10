@@ -290,6 +290,7 @@ io.on('connection', function (client) {
         file:fileIndex[pick],
         phrase:saveData[fileIndex[pick]].phrase
       });
+
       break;
 
 
@@ -436,17 +437,24 @@ function generatePlaySequence(phrase,clientinput){
 
 function seqBufferOver(phrase,clientinput){
   console.log("seq buffer done!");
-
+  /*
   for(let i=0; i<seq.length; i++){
     console.log(seq[i].recording, seq[i].start, seq[i].end , seq[i].words,seq[i].sourcephrase);
   }
-
+ */
   clientinput.emit("rita-result",{
     phrase:phrase,
     sequence:seq
   });
+
   // send answer via osc too
   sendOSCmess("/ritaresult",phrase);
+  let str = "";
+  for(let i=0; i<seq.length; i++){
+    str+= seq[i].words+"##"+seq[i].sourcephrase;
+    if(i!=seq.length-1) str+="###";
+  }
+  sendOSCmess("/ritasources",str);
 }
 
 
