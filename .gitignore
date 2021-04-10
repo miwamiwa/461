@@ -1,5 +1,5 @@
 nodeapp/node_modules/
-nodeapp/out/
+nodeapp/public/out/
 nodeapp/text_files/
 .env
 

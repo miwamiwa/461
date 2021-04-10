@@ -1,33 +1,34 @@
 body {
     font-family: sans-serif;
     background-color: rgb(189, 189, 189);
+    width:96vw;
+    height:96vh;
 }
 
-
-
-.clickableThingy{
-  cursor:pointer;
-  color:#333;
-}
-.clickableThingy:hover{
-  color:#b88;
-}
-
-.wrapper {
-    width: 100vw;
-    margin: 0 auto;
-    display:flex;
-    justify-content:space-around;
+.wrapper{
+  width:100%;
+  max-width:600px;
+  height:100%;
+  max-height:600px;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:space-around;
 }
 
-.sides{
-  width:45vw;
-  height:95vh;
+section{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items:center;
+  text-align:center;
+  width:200px;
+  height:200px;
+  background-color:white;
+  overflow:hidden;
 }
 
-.inputform{
-  width:20px;
-}
-.scrollsection{
-  overflow-y:scroll;
+button{
+
 }

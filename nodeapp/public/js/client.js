@@ -1,11 +1,6 @@
-// using Google Cloud Speech Playground with node.js and socket.io  Created by Vinzenz Aubry
-// also using this thing by meziantou for converting stuff to wav
-// https://gist.github.com/meziantou/edb7217fddfbb70e899e
-
 'use strict';
-window.onload = start;
 
-//connection to socket
+window.onload = start;
 const socket = io.connect();
 
 // Stream Audio
@@ -16,21 +11,14 @@ processor,
 input,
 globalStream;
 
+let recordingInProgress = false;
+let useNoiseSuppression = true;
+
 //variables for mic input and audio streaming
 let audioElement = document.querySelector('audio'),
 finalWord = false,
 streamStreaming = false;
 
-// vars for audio recording & file saving
-let leftchannel = [];
-let rightchannel = [];
-let recordingLength = 0;
-let blob = null;
-
-//audioStream constraints (mic configuration)
-let constraints;
-// selection from input devices list
-let audiosourceselection = "";
 
 
 
@@ -40,60 +28,27 @@ let audiosourceselection = "";
 
 function start(){
 
-  //setupMarkov();
-
-
-  // get available input devices
-  navigator.mediaDevices.enumerateDevices()
-  .then(function(devices) { // takes a sec so wait for it
-
-    // populate input devices list so they can be selected
-    let devicesArea = document.getElementById("devicesGoHere");
-    devices.forEach(function(device) {
-      // console.log(device.kind + ": " + device.label + " id = " + device.deviceId);
-      // add inputs only
-      if(device.kind === 'audioinput'){
-        devicesArea.innerHTML += `<br>
-        <span class='clickableThingy' onclick='setDevice("${device.deviceId}")'>
-        ${device.label}
-        </span>`;
-      }
-    }
-  );
-  // set default input selection
-  audiosourceselection = devices[0].deviceId;
-  // update 'constraints' object (used when setting up mic input)
-  devicesReady();
-
-
-})
-// in case theres some problem getting devices list
-.catch(function(err) {
-  console.log(err.name + ": " + err.message);
-});
+  // see deviceselection.js
+  populateDevicesList();
 }
 
-// devicesReady()
+// toggleRecording()
 //
-// triggered when devices list is obtained
+// triggered by on-screen button
+// see recording.js
 
-function devicesReady(){
-  // update mic input setup object
-  constraints = {
-    audio: {deviceId: audiosourceselection ? {exact: audiosourceselection} : undefined},
-    video: false,
-  };
+function toggleRecording(){
+
+  if(!recordingInProgress) initRecording();
+  else stopRecording();
+
+  recordingInProgress = !recordingInProgress;
 }
 
 
-
-// setDevice()
-// called when an input device is selected from the devices list.
-function setDevice(id){
-  audiosourceselection = id;
+function serverRequest(input){
+  socket.emit("client-request",input);
 }
-
-
 
 
 
@@ -109,29 +64,26 @@ socket.on('messages', function (data) {
   console.log(data);
 });
 
+socket.on('rita-result', function (data) {
+  console.log(data);
+
+  if(data!="nada"){
+    let playButton=`<br><br> <input onclick="play()" id="playButton" type="button" value="Play" disabled="true"></input>`;
+    document.getElementById("promptBox").innerHTML=data.phrase + playButton;
+    loadSoundFileSequence(data.sequence);
+  }
+  else document.getElementById("promptBox").innerHTML="no data :(";
+
+
+
+});
+
 window.onbeforeunload = function () {
   if (streamStreaming) {
     socket.emit('endGoogleCloudStream', '');
   }
 };
 
-//================= SANTAS HELPERS =================
-
-/*
-// this isn't used. it is part of socket-playground code.
-// sampleRateHertz 16000 //saved sound is awefull
-function convertFloat32ToInt16(buffer) {
-  let l = buffer.length;
-  let buf = new Int16Array(l / 3);
-
-  while (l--) {
-    if (l % 3 == 0) {
-      buf[l / 3] = buffer[l] * 0xffff;
-    }
-  }
-  return buf.buffer;
-}
-*/
 
 // downsamplebuffer()
 //
@@ -172,39 +124,75 @@ function capitalize(s) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+let audioFileBuffer = [];
+let sequenceData;
+let sequenceIndex =0;
+let intervalBetweenFiles = 100; // (ms) between files while playing a sequence
+// loadSoundFileSequence()
+//
+// load files relative to rita generation results
+function loadSoundFileSequence(data){
+
+  audioFileBuffer = [];
+  sequenceData = data;
 
 
+  for(let i=0; i<data.length; i++){
+    // properties of data[i]: start, end, recording (file #), words, sourcephrase;
 
-// THESE FUNCTIONS ARE FOR THE WAV RECORDING PART:
+    // buffer sound:
+    audioFileBuffer.push(new Audio("assets/out/"+data[i].recording+".wav"));
 
-
-function flattenArray(channelBuffer, recordingLength) {
-  var result = new Float32Array(recordingLength);
-  var offset = 0;
-  for (var i = 0; i < channelBuffer.length; i++) {
-    var buffer = channelBuffer[i];
-    result.set(buffer, offset);
-    offset += buffer.length;
   }
-  return result;
+
+  startSequence();
+  //audioFileBuffer[0].play();
 }
 
-function interleave(leftChannel, rightChannel) {
-  var length = leftChannel.length + rightChannel.length;
-  var result = new Float32Array(length);
-
-  var inputIndex = 0;
-
-  for (var index = 0; index < length;) {
-    result[index++] = leftChannel[inputIndex];
-    result[index++] = rightChannel[inputIndex];
-    inputIndex++;
-  }
-  return result;
+function startSequence(){
+  sequenceIndex =0;
+  playSequence();
+  document.getElementById("playButton").disabled = true;
 }
 
-function writeUTFBytes(view, offset, string) {
-  for (var i = 0; i < string.length; i++) {
-    view.setUint8(offset + i, string.charCodeAt(i));
+
+function playSequence(){
+
+  let audio = audioFileBuffer[sequenceIndex];
+  let length =sequenceData[sequenceIndex].end - sequenceData[sequenceIndex].start;
+
+  audio.currentTime = sequenceData[sequenceIndex].start;
+  audio.play();
+  audio.volume = 1;
+
+  // stop buffer
+  setTimeout(function(){
+    fadeAudio(audio);
+  }, length*1000 );
+
+  // play next
+  sequenceIndex++;
+  if(sequenceIndex<audioFileBuffer.length){
+    setTimeout(playSequence, length*1000 + intervalBetweenFiles)
   }
+  else {
+    setTimeout(function(){
+      console.log("sequence over");
+      document.getElementById("playButton").disabled = false;
+    }, length*1000 + intervalBetweenFiles/2);
+  }
+}
+
+function fadeAudio(audio){
+  console.log("fade!")
+  audio.volume = Math.max(audio.volume - 0.1,0);
+
+  if(audio.volume>0) setTimeout(fadeAudio, 20, audio);
+  else audio.pause();
+}
+
+
+function play(){
+  console.log("play!");
+  startSequence();
 }

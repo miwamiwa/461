@@ -1,20 +1,25 @@
-let autoResetActive= false;
 
-function toggleAutoReset(){
-  autoResetActive = !autoResetActive;
-}
 //================= RECORDING =================
 // edited socket-playground functions
 
 function initRecording() {
+
+  // update interface
+  document.getElementById("recordButton").value="Stop Recording";
+  document.getElementById("recordStatus").style.display="block";
+
+  // start recording
+
   socket.emit('startGoogleCloudStream', ''); //init socket Google Speech Connection
   streamStreaming = true;
+
   AudioContext = window.AudioContext || window.webkitAudioContext;
   context = new AudioContext({
     // if Non-interactive, use 'playback' or 'balanced' // https://developer.mozilla.org/en-US/docs/Web/API/AudioContextLatencyCategory
     latencyHint: 'interactive',
-    noiseSuppression: true
+    noiseSuppression: useNoiseSuppression
   });
+
   processor = context.createScriptProcessor(bufferSize, 1, 1);
   processor.connect(context.destination);
   context.resume();
@@ -32,56 +37,28 @@ function initRecording() {
   navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess);
 }
 
+// microphoneProcess()
+//
+// process an incomnig chunk of audio data and send to server.
+
 function microphoneProcess(e) {
 
   let data = e.inputBuffer.getChannelData(0);
-
-  // send to buffer for file saving:
-
-  //leftchannel.push(new Float32Array(data));
-  //rightchannel.push(new Float32Array(data));
-  // if stereo:
-  //  rightchannel.push(new Float32Array(e.inputBuffer.getChannelData(1)));
-  //recordingLength += bufferSize;
-
-  // create another buffer and emit via sockets:
-
-  // var left16 = convertFloat32ToInt16(left); // old 32 to 16 function
   let left16 = downsampleBuffer(data, 44100, 16000);
   socket.emit('binaryData', left16);
 }
 
-//================= INTERFACE =================
-var startButton = document.getElementById('startRecButton');
-startButton.addEventListener('click', startRecording);
 
-var endButton = document.getElementById('stopRecButton');
-endButton.addEventListener('click', stopRecording);
-endButton.disabled = true;
-
-var recordingStatus = document.getElementById('recordingStatus');
-
-function startRecording() {
-
-  emptyBuffers();
-  console.log(navigator.mediaDevices.getSupportedConstraints())
-  startButton.disabled = true;
-  endButton.disabled = false;
-  recordingStatus.style.visibility = 'visible';
-  initRecording();
-  playButton.disabled = true;
-  downloadButton.disabled = true;
-}
-
+// stopRecording()
+//
+// triggered by on screen button .
 function stopRecording() {
 
-  // waited for FinalWord
-  startButton.disabled = false;
-  endButton.disabled = true;
+  // update interface
+  document.getElementById("recordButton").value="Record";
+  document.getElementById("recordStatus").style.display="none";
 
-  playButton.disabled = false;
-  downloadButton.disabled = false;
-  recordingStatus.style.visibility = 'hidden';
+  // stop recording
   streamStreaming = false;
   socket.emit('endGoogleCloudStream', '');
 
@@ -95,23 +72,6 @@ function stopRecording() {
     processor = null;
     context = null;
     AudioContext = null;
-    startButton.disabled = false;
+    //startButton.disabled = false;
   });
-
-  // context.close();
-
-  // audiovideostream.stop();
-
-  // microphone_stream.disconnect(script_processor_node);
-  // script_processor_node.disconnect(audioContext.destination);
-  // microphone_stream = null;
-  // script_processor_node = null;
-
-  // audiovideostream.stop();
-  // videoElement.srcObject = null;
-
-
-  
-  //recordToWav();
-  //saveBuffer();
 }

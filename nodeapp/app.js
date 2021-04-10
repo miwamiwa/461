@@ -18,7 +18,7 @@ const speechClient = new speech.SpeechClient({
     client_email: process.env.GOOGLE_CLIENT_EMAIL
   }
 });
-
+let gcloudProcessDelay = 400; // time (ms) to wait before checking final gcloud results after turning off mic
 // -------give me rita!
 let RiTa = require('rita');
 let rm;
@@ -38,7 +38,7 @@ let importList;
 let importDone = false;
 
 // get any index data already on file
-fs.readFile('out/index.txt', (error, txtString) => {
+fs.readFile('public/out/index.txt', (error, txtString) => {
   if (error){
     console.log("no index file!")
     console.log("moving on anyway chief");
@@ -69,7 +69,7 @@ function importImportList(){
   let file = importList[0];
   importList.shift();
 
-  fs.readFile('out/'+file+'.txt',"ascii", (error, txtString) => {
+  fs.readFile('public/out/'+file+'.txt',"ascii", (error, txtString) => {
     if (error) throw err;
 
     let str = txtString.toString();
@@ -113,17 +113,30 @@ function importOver(){
   console.log(saveData);
   importDone = true;
 
-  getrita();
+  //getrita();
 
 }
 
-async function getrita(){
+async function getrita(clientinput){
   try{
-    console.log("got rita:");
-    let result = rm.generate();
-    console.log(result);
+    //console.log("got rita:");
+    let r = await rm.generate();
+    //console.log(result);
     //console.log("... that was the test. good job everybody.\n")
-    return result;
+    console.log("generating something with rita")
+    console.log("result:")
+    console.log(r)
+    // if we successfully generated something
+    if(r!=undefined&&r!=false&&r!=""){
+      // send answer back to front-end
+      generatePlaySequence(r,clientinput);
+
+    }
+    // otherwise
+    else{
+      clientinput.emit("rita-result","nada");
+      console.log("not enough data to ri-generate");
+    }
 
   }
   catch(error){
@@ -264,36 +277,64 @@ io.on('connection', function (client) {
     client.emit('broad', data);
   });
 
-  // send some rita generated text to front end
-  client.on('ritaRequest',function(){
-    let r = getrita();
-    // if we successfully generated something
-    if(r!=undefined&&r!=false){
-      // send answer back to front-end
-      client.emit("rita-result",r);
-      // send answer via osc too
-      sendOSCmess("/ritaresult",r);
+
+  client.on("client-request", function(data){
+
+    switch(data){
+      case 'random-recording':
+
+      console.log("random-recording request");
+      let pick = Math.floor(Math.random()*fileIndex.length);
+      console.log("the result is "+fileIndex[pick]);
+      client.emit("got-random-recording",{
+        file:fileIndex[pick],
+        phrase:saveData[fileIndex[pick]].phrase
+      });
+      break;
+
+
+      case 'latest-recording':
+
+      console.log("\nlatest-recording request");
+      let result = fileIndex[fileIndex.length-1];
+      console.log("the result is "+result);
+      client.emit("got-latest-recording",{
+        file:result,
+        phrase:saveData[result].phrase
+      });
+
+      break;
+
+
+      case 'generate-phrase':
+      console.log("\ngenerate-phrase request");
+
+      if(fileIndex.length>5) getrita(this);
+      else console.log("Not enough recordings. Right now there are "+fileIndex.length);
+
+      break; // case 'generate-phrase' END
     }
-    // otherwise
-    else client.emit("rita-result","nada");
   });
 
   // receive start/stop commands from the front-end:
 
   client.on('startGoogleCloudStream', function (data) {
-    console.log("opened mic on front-end");
+    if(!clientOnWait){
+      console.log("opened mic on front-end");
 
-    // start a new wav file
-    outPath = getUniqueOutputPath();
-    writer = new wav.FileWriter(outPath, wavOpts2);
+      // start a new wav file
+      outPath = getUniqueOutputPath();
+      writer = new wav.FileWriter(outPath, wavOpts2);
 
-    // grab only the part witht the file number
-    outPath=outPath.substring(outPath.indexOf(`out`)+4,outPath.indexOf(".wav"));
-    stringBuffers[outPath] ="";
-    timestampBuffers[outPath] ="";
+      // grab only the part witht the file number
+      outPath=outPath.substring(outPath.indexOf(`out`)+4,outPath.indexOf(".wav"));
+      stringBuffers[outPath] ="";
+      timestampBuffers[outPath] ="";
 
-    startRecognitionStream(this, outPath);
-    sendOSCmess("/micstart","start");
+      startRecognitionStream(this, outPath);
+      sendOSCmess("/micstart","start");
+    }
+
   });
 
 
@@ -305,57 +346,9 @@ io.on('connection', function (client) {
     stopRecognitionStream();
     writer.end(); // finish wav file
 
-    // write text file with transcript info
-    fs.writeFile(
-      'out/'+outPath+'.txt',
-      stringBuffers[outPath] +"###"+ timestampBuffers[outPath],
-      (error) => {
-      if (error) throw error;
-    });
-
-    // add text to markov model
-    let combinedstring=stringBuffers[outPath].replace("\n"," ");
-    rm.addText(combinedstring);
-
-    // update file index array
-    fileIndex.push(outPath);
-
-    // update file index files indexing file
-    let str = fileIndex.join("\n");
-    fs.writeFile('out/index.txt', str, (error) => {
-      if(error) throw error;
-    });
-
-    // update current data buffer
-
-    let dataobj = {}
-    // buffer save data
-
-
-      // add to save data buffer
-    dataobj.phrase = combinedstring;
-
-    // get timestamp data
-    dataobj.timeStamps = [];
-    let stamps = timestampBuffers[outPath].split("\n");
-    for(let i=0; i<stamps.length; i++){
-      let stamp = stamps[i].split(" ");
-      if(stamp[0]!="")
-      dataobj.timeStamps.push( {
-        start:stamp[1],
-        end:stamp[2],
-        word:stamp[0]
-      });
-    }
-
-
-    saveData[outPath] = dataobj;
-    console.log("updated buffer!")
-    console.log(saveData[outPath])
-
-    // empty  buffer
-    stringBuffers[outPath]=undefined;
-    timestampBuffers[outPath]=undefined;
+    clientOnWait = true;
+    client.emit("back-end-ready","not-ready");
+    setTimeout(processfinaldata, gcloudProcessDelay, outPath, this);
   });
 
   // funnel mic data from front end to g-cloud
@@ -369,10 +362,169 @@ io.on('connection', function (client) {
     }
   });
 });
+let clientOnWait = false;
+function processfinaldata(outPath, clientinput){
+  clientinput.emit("back-end-ready","ready");
+  clientOnWait = false;
+  // write text file with transcript info
+  fs.writeFile(
+    'public/out/'+outPath+'.txt',
+    stringBuffers[outPath] +"###"+ timestampBuffers[outPath],
+    (error) => {
+    if (error) throw error;
+  });
+
+  // add text to markov model
+  let combinedstring=stringBuffers[outPath].replace("\n"," ");
+  rm.addText(combinedstring);
+
+  // update file index array
+  fileIndex.push(outPath);
+
+  // update file index files indexing file
+  let str = fileIndex.join("\n");
+  fs.writeFile('public/out/index.txt', str, (error) => {
+    if(error) throw error;
+  });
+
+  // update current data buffer
+
+  let dataobj = {}
+  // buffer save data
+
+
+    // add to save data buffer
+  dataobj.phrase = combinedstring;
+
+  // get timestamp data
+  dataobj.timeStamps = [];
+  let stamps = timestampBuffers[outPath].split("\n");
+  for(let i=0; i<stamps.length; i++){
+    let stamp = stamps[i].split(" ");
+    if(stamp[0]!="")
+    dataobj.timeStamps.push( {
+      start:stamp[1],
+      end:stamp[2],
+      word:stamp[0]
+    });
+  }
+
+
+  saveData[outPath] = dataobj;
+  console.log("updated buffer!")
+  console.log(saveData[outPath])
+
+  // empty  buffer
+  stringBuffers[outPath]=undefined;
+  timestampBuffers[outPath]=undefined;
+}
 
 let stringBuffers = [];
+let seqWordIndex=0;
+let seq=[];
+let splitSentence;
+
+function generatePlaySequence(phrase,clientinput){
+
+  splitSentence = phrase.split(" ");
+  seq=[];
+  seqWordIndex=0;
+
+  bufferseq(phrase,clientinput)
+
+}
+
+function seqBufferOver(phrase,clientinput){
+  console.log("seq buffer done!");
+
+  for(let i=0; i<seq.length; i++){
+    console.log(seq[i].recording, seq[i].start, seq[i].end , seq[i].words,seq[i].sourcephrase);
+  }
+
+  clientinput.emit("rita-result",{
+    phrase:phrase,
+    sequence:seq
+  });
+  // send answer via osc too
+  sendOSCmess("/ritaresult",phrase);
+}
 
 
+
+function bufferseq(phrase,clientinput){
+
+    let targetWord = splitSentence[seqWordIndex].replace(".","");
+    let results = [];
+
+    // find all instances of the word and add to results array
+
+    for (var key in saveData) {
+    //console.log(saveData[key]);
+    let el = saveData[key];
+    let t = el.timeStamps;
+    for(let i=0; i<t.length; i++){
+      if(el.timeStamps[i].word==targetWord){
+        results.push({recording:key,word:i});
+      }
+    }
+    }
+
+    /*
+    saveData.forEach((el, index) => {
+      console.log(".")
+      let t = el.timestamps;
+      for(let i=0; i<t.length; i++){
+        if(el.timestamps[i].word==targetWord){
+          results.push({recording:index,word:i});
+        }
+      }
+    });
+    */
+
+    // pick one of the instances
+    let pick =0;
+    if(results.length>1) pick = Math.floor(Math.random()*results.length);
+    let result = results[pick];
+    let data = saveData[result.recording].timeStamps[result.word];
+    let starttime = data.start;
+    let endtime = data.end;
+    let wordcontent = targetWord;
+
+    // extend end time if possible
+    let nextword =1;
+    while(
+      // while there are more words after this one in the recording
+      result.word+nextword<saveData[result.recording].timeStamps.length
+      // and the next word is the same as the next word that we need
+      &&splitSentence[seqWordIndex+nextword].replace('.','')
+        ==saveData[result.recording].timeStamps[result.word+nextword].word){
+
+          // update the end time
+        endtime = saveData[result.recording].timeStamps[result.word+nextword].end;
+        wordcontent+=" "+saveData[result.recording].timeStamps[result.word+nextword].word;
+        // check the next word
+        nextword++;
+      }
+    seqWordIndex+=nextword;
+
+    // buffer sequence part
+    seq.push({
+      recording:result.recording,
+      start: starttime,
+      end: endtime,
+      words: wordcontent,
+      sourcephrase: saveData[result.recording].phrase
+    });
+
+    // trigger next
+    if(seqWordIndex<splitSentence.length){
+      // delay it slightly
+      setTimeout( bufferseq, 1, phrase,clientinput);
+    }
+    else{
+      seqBufferOver(phrase,clientinput);
+    }
+}
 // startRecognitionStream()
 //
 // Start streaming mic data to gcloud, and listen for the
@@ -522,7 +674,7 @@ net.createServer(function (socket) {
     writer.write(buf);
   });
 
-  
+
   socket.on('end', function () {
     tcpStreamStarted=false;
     stopRecognitionStream();
