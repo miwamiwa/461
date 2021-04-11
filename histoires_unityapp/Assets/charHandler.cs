@@ -69,7 +69,7 @@ public class charHandler : MonoBehaviour
 
     }
 
-    void updatecolor(Material mat)
+    public void updatecolor(Material mat)
     {
         tm.color = mat.color;
     }

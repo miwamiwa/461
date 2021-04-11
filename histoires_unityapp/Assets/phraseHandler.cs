@@ -20,17 +20,40 @@ public class phraseHandler : MonoBehaviour
                 
     }
 
-    public void SetObjects(GameObject inputline, GameObject outputbox)
+    public void SetupPhrase(GameObject inputline, GameObject outputbox, string input)
+    {
+        ResetValues();
+        SetObjects(inputline, outputbox);
+        SetText(input);
+    }
+
+    void ResetValues()
+    {
+        vel = 0.08f;
+        offset = 0f;
+        textReady = false;
+        objectsReady = false;
+
+        if(chars !=null)
+        foreach(GameObject charobj in chars){
+            Destroy(charobj);
+        }
+    }
+
+    void SetObjects(GameObject inputline, GameObject outputbox)
     {
         lineobj = inputline;
-        line = lineobj.GetComponent<line>();
+        line = inputline.GetComponent<line>();
 
         charContainer = outputbox;
         objectsReady = true;
+
+        Debug.Log("found line component on "+lineobj.name+": ");
+        Debug.Log(line);
     }
 
 
-    public void SetText(string input)
+    void SetText(string input)
     {
         text = input;
         int initfontsize = 26;
