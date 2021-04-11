@@ -10,6 +10,9 @@ public class handleTexts : MonoBehaviour
     public GameObject templatePhrase;
     public GameObject LineGroups;
 
+    public GameObject text1;
+    public GameObject text2;
+
     string PhraseResult = "";
     List<List<string>> sourceWordsInPhrase = new List<List<string>>();
     List<string> fullSourcePhrases = new List<string>();
@@ -32,7 +35,8 @@ public class handleTexts : MonoBehaviour
         osc.SetAddressHandler("/ritasources", GotSources);
         osc.SetAddressHandler("/finaltranscript", GotFinalTranscript);
         osc.SetAddressHandler("/livetranscript", GotLiveTranscript);
-
+        osc.SetAddressHandler("/randomRecording", GotPrompt);
+        osc.SetAddressHandler("/latestRecording", GotPrompt);
     }
 
     // Update is called once per frame
@@ -67,13 +71,26 @@ public class handleTexts : MonoBehaviour
         }
     }
 
+    void GotPrompt (OscMessage message)
+    {
+        string mess = message.ToString();
+        
+        // remove header 
+        int pos = mess.IndexOf(" ");
+        mess = mess.Substring(pos, mess.Length - pos);
+        //phraseReady = true;
+        PhraseResult = mess;
+
+        Debug.Log("Phrase: " + mess);
+        QueueText(PhraseResult);
+
+        text1.GetComponent<UnityEngine.UI.Text>().text = mess;
+    }
+
     void GotResult(OscMessage message)
     {
         string mess = message.ToString();
-        Debug.Log("EYYY");
-        Debug.Log(mess);
-        Debug.Log(mess.IndexOf(" "));
-        Debug.Log(mess.Length);
+
         // remove header 
         int pos = mess.IndexOf(" ");
         mess = mess.Substring(pos, mess.Length-pos);
@@ -82,6 +99,8 @@ public class handleTexts : MonoBehaviour
 
         Debug.Log("Phrase: " + mess);
         QueueText(PhraseResult);
+
+        text1.GetComponent<UnityEngine.UI.Text>().text = mess;
     }
 
     void GotSources(OscMessage message)
@@ -116,6 +135,10 @@ public class handleTexts : MonoBehaviour
         string mess = message.ToString();
         int pos = mess.IndexOf(" ");
         mess = mess.Substring(pos, mess.Length - pos);
+
+        text2.GetComponent<UnityEngine.UI.Text>().text = mess;
+
+        queue.Add(mess);
     }
 
     void GotLiveTranscript(OscMessage message)
@@ -123,6 +146,12 @@ public class handleTexts : MonoBehaviour
         string mess = message.ToString();
         int pos = mess.IndexOf(" ");
         mess = mess.Substring(pos, mess.Length - pos);
+
+        text2.GetComponent<UnityEngine.UI.Text>().text = mess;
+
+        // add messages during live transcripts??
+        // sort of chaotic lol
+        // queue.Add(mess);
     }
 
     void PutTextOnTracks(string input)
@@ -163,6 +192,10 @@ public class handleTexts : MonoBehaviour
         */
     }
 
+    // stole this from 
+    //https://forum.unity.com/threads/quickly-retrieving-the-immediate-children-of-a-gameobject.39451/ 
+    // thanks to users DreamTitan and PutridPleasure 
+    // made just a couple of changes myself
     public Transform[] GetComponentsInDirectChildren(Transform parent)
     {
         List<Transform> tmpList = new List<Transform>();

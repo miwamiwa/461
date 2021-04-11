@@ -291,6 +291,7 @@ io.on('connection', function (client) {
         phrase:saveData[fileIndex[pick]].phrase
       });
 
+      sendOSCmess("/randomRecording",saveData[fileIndex[pick]].phrase);
       break;
 
 
@@ -303,7 +304,7 @@ io.on('connection', function (client) {
         file:result,
         phrase:saveData[result].phrase
       });
-
+      sendOSCmess("/latestRecording",saveData[result].phrase);
       break;
 
 

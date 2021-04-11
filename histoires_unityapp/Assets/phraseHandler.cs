@@ -14,6 +14,8 @@ public class phraseHandler : MonoBehaviour
     GameObject charContainer;
     bool textReady = false;
     bool objectsReady = false;
+
+    int counter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +86,7 @@ public class phraseHandler : MonoBehaviour
         float cumulativeOffset = 0f;
         int currentsegment = 0;
 
+        counter++;
         // repeat for each character 
         for (int i = 0; i < text.Length; i++)
         {
@@ -116,6 +119,19 @@ public class phraseHandler : MonoBehaviour
                 chars[i].GetComponent<charHandler>().updateSize(line.fontsizegates[currentsegment]);
             }
             cumulativeOffset += chars[i].GetComponent<charHandler>().w;
+
+            
+        }
+
+        // wait a few frames before checking if this phrase needs to be deleted, 
+        // since cumulativeOffset might not have any value at first?
+        if (counter> 80 && -offset > cumulativeOffset)
+        {
+            //Debug.Log("YOOOOOOOOOOOOO");
+            for (int i = chars.Length - 1; i >= 0; i--)
+                Destroy(chars[i]);
+
+            Destroy(gameObject);
         }
     }
 
