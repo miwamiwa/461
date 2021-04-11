@@ -5,7 +5,7 @@ using UnityEngine;
 public class phraseHandler : MonoBehaviour
 {
     float vel = 0.08f;
-    string text= "";
+    public string text= "";
     GameObject[] chars;
     float offset = 0f;
     public GameObject templatechar;
@@ -30,6 +30,15 @@ public class phraseHandler : MonoBehaviour
         ResetValues();
         SetObjects(inputline, outputbox);
         SetText(input);
+    }
+
+    public void updateChars(int startindex, int size, Material mat)
+    {
+        int endindex = startindex + size;
+        for (int i=startindex; i<endindex; i++)
+        {
+            chars[i].GetComponent<charHandler>().updatecolor(mat);
+        }
     }
 
     void ResetValues()
@@ -133,8 +142,9 @@ public class phraseHandler : MonoBehaviour
             //Debug.Log("YOOOOOOOOOOOOO");
             for (int i = chars.Length - 1; i >= 0; i--)
                 Destroy(chars[i]);
-
+            GameObject.Find("textHandler").GetComponent<handleTexts>().RemoveActivePhrase(gameObject);
             Destroy(gameObject);
+
         }
 
         if (!trackFreed && counter > 10 && -offset > cumulativeOffset - 18f)
@@ -150,3 +160,4 @@ public class phraseHandler : MonoBehaviour
         offset -= vel;
     }
 }
+

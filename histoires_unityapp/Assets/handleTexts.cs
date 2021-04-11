@@ -10,6 +10,9 @@ public class handleTexts : MonoBehaviour
     public GameObject templatePhrase;
     public GameObject LineGroups;
 
+    public Material sourceWordsInPhraseMat;
+    List<GameObject> activePhrases = new List<GameObject>();
+
     public GameObject text1;
     public GameObject text2;
 
@@ -93,6 +96,26 @@ public class handleTexts : MonoBehaviour
                 bool worked = PutTextOnTracks(output);
                 if (worked)
                 {
+                    List<string> words = sourceWordsInPhrase[0];
+                    
+                    for(int j=0; j<activePhrases.Count; j++)
+                    {
+                        phraseHandler phrasehandler = activePhrases[j].GetComponent<phraseHandler>();
+                        string txt = phrasehandler.text;
+
+                        for (int i = 0; i < words.Count; i++)
+                        {
+                            int wordIndex = txt.IndexOf(words[i]);
+
+                            if (wordIndex != -1)
+                            {
+                                Material mat = sourceWordsInPhraseMat;
+                                phrasehandler.updateChars(wordIndex,words[i].Length, mat);
+                            }
+                        }
+                    }
+                    
+
                     fullSourcePhrases.RemoveAt(0);
                     sourceWordsInPhrase.RemoveAt(0);
                 }
@@ -100,6 +123,11 @@ public class handleTexts : MonoBehaviour
                 nextTrigger = Time.time + InputInterval;
             }
         }
+    }
+
+    public void RemoveActivePhrase(GameObject input)
+    {
+        activePhrases.RemoveAt( activePhrases.IndexOf(input));
     }
 
     void GotPrompt (OscMessage message)
@@ -205,6 +233,7 @@ public class handleTexts : MonoBehaviour
             Debug.Log(pick);
             Debug.Log(chosenLine.name);
             GameObject phrase = Instantiate(templatePhrase);
+            activePhrases.Add(phrase);
             worked = true;
             phraseHandler ph = phrase.GetComponent<phraseHandler>();
             ph.SetupPhrase(chosenLine, outputbox, input, pick);

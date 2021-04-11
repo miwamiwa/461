@@ -956,7 +956,7 @@ MonoBehaviour:
   fontsizegates:
   - 30
   - -1
-  - 6
+  - 40
   - -1
   - -1
 --- !u!120 &974314928
@@ -1497,6 +1497,7 @@ MonoBehaviour:
   templatePhrase: {fileID: 3899337635069377243, guid: 7761397e19b4aa94caf5c022523d1d03,
     type: 3}
   LineGroups: {fileID: 1589290793}
+  sourceWordsInPhraseMat: {fileID: 0}
   text1: {fileID: 1887514376}
   text2: {fileID: 985915532}
   TrackIsFree: 
@@ -1726,7 +1727,7 @@ MonoBehaviour:
   fontsizegates:
   - 30
   - -1
-  - 6
+  - 50
   - -1
   - -1
 --- !u!120 &1765203983
