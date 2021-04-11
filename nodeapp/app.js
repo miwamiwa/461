@@ -226,6 +226,13 @@ server2.on('message', (msg) => {
   //server2.close();
 });
 
+// unity may also ask for random recordings to fill time
+server2.on("/randomRecordingRequest",(msg)=>{
+  let pick = Math.floor(Math.random()*fileIndex.length);
+  console.log("random recording request from Unity")
+  sendOSCmess("/randomRecEcho",saveData[fileIndex[pick]].phrase);
+});
+
 // a function to send osc messages without worrying about syntax
 function sendOSCmess(header,message){
   client2.send(header, message, (err) => {

@@ -10,6 +10,8 @@ public class handleTexts : MonoBehaviour
     public GameObject templatePhrase;
     public GameObject LineGroups;
 
+    bool waitingForEcho = false;
+
     public Material sourceWordsInPhraseMat;
     List<GameObject> activePhrases = new List<GameObject>();
 
@@ -43,6 +45,8 @@ public class handleTexts : MonoBehaviour
         osc.SetAddressHandler("/livetranscript", GotLiveTranscript);
         osc.SetAddressHandler("/randomRecording", GotPrompt);
         osc.SetAddressHandler("/latestRecording", GotPrompt);
+
+        osc.SetAddressHandler("/randomRecEcho", GotPrompt);
 
         SetCurrentLineSet(0);
     }
@@ -122,6 +126,18 @@ public class handleTexts : MonoBehaviour
                 
                 nextTrigger = Time.time + InputInterval;
             }
+
+            // if it's time for a new trigger but there's nothing available
+            else if(activePhrases.Count < 2 && !waitingForEcho)
+            {
+                OscMessage message = new OscMessage();
+
+                message.address = "/randomRecordingRequest";
+                message.values.Add("giveme");
+                osc.Send(message);
+
+                waitingForEcho = true;
+            }
         }
     }
 
@@ -144,6 +160,8 @@ public class handleTexts : MonoBehaviour
         QueueText(PhraseResult);
 
         text1.GetComponent<UnityEngine.UI.Text>().text = mess;
+
+        waitingForEcho = false;
     }
 
     void GotResult(OscMessage message)

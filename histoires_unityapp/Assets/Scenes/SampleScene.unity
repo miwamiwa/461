@@ -1497,7 +1497,8 @@ MonoBehaviour:
   templatePhrase: {fileID: 3899337635069377243, guid: 7761397e19b4aa94caf5c022523d1d03,
     type: 3}
   LineGroups: {fileID: 1589290793}
-  sourceWordsInPhraseMat: {fileID: 0}
+  sourceWordsInPhraseMat: {fileID: 2100000, guid: d3d6f841ab912e7498da731de49fa194,
+    type: 2}
   text1: {fileID: 1887514376}
   text2: {fileID: 985915532}
   TrackIsFree: 
