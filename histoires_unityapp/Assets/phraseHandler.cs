@@ -14,6 +14,8 @@ public class phraseHandler : MonoBehaviour
     GameObject charContainer;
     bool textReady = false;
     bool objectsReady = false;
+    bool trackFreed = false;
+    int currentTrack = 0;
 
     int counter = 0;
     // Start is called before the first frame update
@@ -22,8 +24,9 @@ public class phraseHandler : MonoBehaviour
                 
     }
 
-    public void SetupPhrase(GameObject inputline, GameObject outputbox, string input)
+    public void SetupPhrase(GameObject inputline, GameObject outputbox, string input, int pick)
     {
+        currentTrack = pick;
         ResetValues();
         SetObjects(inputline, outputbox);
         SetText(input);
@@ -32,7 +35,7 @@ public class phraseHandler : MonoBehaviour
     void ResetValues()
     {
         vel = 0.08f;
-        offset = 0f;
+        offset = 18f;
         textReady = false;
         objectsReady = false;
 
@@ -125,13 +128,20 @@ public class phraseHandler : MonoBehaviour
 
         // wait a few frames before checking if this phrase needs to be deleted, 
         // since cumulativeOffset might not have any value at first?
-        if (counter> 80 && -offset > cumulativeOffset)
+        if (counter > 10 && -offset > cumulativeOffset)
         {
             //Debug.Log("YOOOOOOOOOOOOO");
             for (int i = chars.Length - 1; i >= 0; i--)
                 Destroy(chars[i]);
 
             Destroy(gameObject);
+        }
+
+        if (!trackFreed && counter > 10 && -offset > cumulativeOffset - 18f)
+        {
+            // track is free at this point
+            trackFreed = true;
+            GameObject.Find("textHandler").GetComponent<handleTexts>().TrackIsFree[currentTrack] = true;
         }
     }
 

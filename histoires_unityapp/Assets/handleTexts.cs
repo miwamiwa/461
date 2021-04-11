@@ -20,6 +20,9 @@ public class handleTexts : MonoBehaviour
     List<string> queue;
     float InputInterval = 1.5f;
     float nextTrigger = 0f;
+    List<int> RandomMemory = new List<int>();
+
+    public List<bool> TrackIsFree = new List<bool>();
 
     int currentLineSet = 0;
 
@@ -37,6 +40,25 @@ public class handleTexts : MonoBehaviour
         osc.SetAddressHandler("/livetranscript", GotLiveTranscript);
         osc.SetAddressHandler("/randomRecording", GotPrompt);
         osc.SetAddressHandler("/latestRecording", GotPrompt);
+
+        SetCurrentLineSet(0);
+    }
+
+    void SetCurrentLineSet(int input)
+    {
+        currentLineSet = input;
+        TrackIsFree = new List<bool>();
+
+        Transform[] children = GetComponentsInDirectChildren(LineGroups.transform);
+        
+        GameObject LineSet = children[currentLineSet].gameObject;
+        
+        Transform[] Lines = GetComponentsInDirectChildren(LineSet.transform);
+
+        for(int i=0; i<Lines.Length; i++)
+        {
+            TrackIsFree.Add(true);
+        }
     }
 
     // Update is called once per frame
@@ -47,8 +69,13 @@ public class handleTexts : MonoBehaviour
 
             if (queue.Count > 0)
             {
-                PutTextOnTracks(queue[0]);
-                queue.RemoveAt(0);
+                bool worked = PutTextOnTracks(queue[0]);
+
+                if (worked)
+                {
+                    queue.RemoveAt(0);
+                }
+                
                 nextTrigger = Time.time + InputInterval;
             }
             else if (fullSourcePhrases.Count > 0)
@@ -63,9 +90,13 @@ public class handleTexts : MonoBehaviour
                 // method called updatecolor(material). Pass a material as 
                 // argument to set color..........................
                 string output = fullSourcePhrases[0];
-                PutTextOnTracks(output);
-                fullSourcePhrases.RemoveAt(0);
-                sourceWordsInPhrase.RemoveAt(0);
+                bool worked = PutTextOnTracks(output);
+                if (worked)
+                {
+                    fullSourcePhrases.RemoveAt(0);
+                    sourceWordsInPhrase.RemoveAt(0);
+                }
+                
                 nextTrigger = Time.time + InputInterval;
             }
         }
@@ -111,8 +142,8 @@ public class handleTexts : MonoBehaviour
         mess = mess.Substring(pos, mess.Length - pos);
         string[] sources = mess.Split('#');
 
-        sourceWordsInPhrase = new List<List<string>>();
-        fullSourcePhrases = new List<string>();
+        //sourceWordsInPhrase = new List<List<string>>();
+        //fullSourcePhrases = new List<string>();
 
         for(int i=0; i<sources.Length; i++)
         {
@@ -154,9 +185,9 @@ public class handleTexts : MonoBehaviour
         // queue.Add(mess);
     }
 
-    void PutTextOnTracks(string input)
+    bool PutTextOnTracks(string input)
     {
-        
+        bool worked = false;
         Transform[] children = GetComponentsInDirectChildren(LineGroups.transform);
         //int pick = Random.Range(0, children.Length);
         //Debug.Log("picked line set # " + pick+" from a choice of "+children.Length+" sets");
@@ -165,18 +196,74 @@ public class handleTexts : MonoBehaviour
         Debug.Log(LineSet.name);
         Transform[] Lines = GetComponentsInDirectChildren(LineSet.transform);
 
-        int pick = Random.Range(0, Lines.Length-1);
+        int pick = PickAvailableTrack(Lines.Length);
+        if (pick != -1)
+        {
+            GameObject chosenLine = Lines[pick].gameObject;
 
-        GameObject chosenLine = Lines[pick].gameObject;
+            Debug.Log("chosen line: ");
+            Debug.Log(pick);
+            Debug.Log(chosenLine.name);
+            GameObject phrase = Instantiate(templatePhrase);
+            worked = true;
+            phraseHandler ph = phrase.GetComponent<phraseHandler>();
+            ph.SetupPhrase(chosenLine, outputbox, input, pick);
+        }
 
-        Debug.Log("chosen line: ");
-        Debug.Log(pick);
-        Debug.Log(chosenLine.name);
-        GameObject phrase = Instantiate(templatePhrase);
 
-        phraseHandler ph = phrase.GetComponent<phraseHandler>();
-        ph.SetupPhrase(chosenLine, outputbox, input);
+        return worked;
+    }
+
+    int PickAvailableTrack(int inputLength)
+    {
+        int pick = Random.Range(0, inputLength);
+
+        bool roomavailable = false;
+        Debug.Log(TrackIsFree.Count+" "+ inputLength);
+        for(int i=0; i<inputLength; i++)
+        {
+            if (TrackIsFree[i] == true) roomavailable = true;
+        }
+
+        if (roomavailable)
+        {
+            while (TrackIsFree[pick] == false)
+            {
+                pick=Random.Range(0, inputLength);
+            }
+
+            TrackIsFree[pick] = false;
+            return pick;
+        }
+        else return -1;
         
+    }
+
+    int DifferentRandomPick(int inputLength)
+    {
+        int result = Random.Range(0, inputLength );
+
+        // memory max length should be one less than inputLength 
+        while (RandomMemory.Count >= inputLength -1 && RandomMemory.Count>0)
+            RandomMemory.RemoveAt(0);
+
+        // remove any out of range entries in memory
+        for(int i= RandomMemory.Count-1; i>=0; i--)
+        {
+            if (RandomMemory[i] >= inputLength)
+                RandomMemory.RemoveAt(i);
+        }
+
+        // now look for a number that isn't in memory
+        while (RandomMemory.Contains(result))
+        {
+            result = Random.Range(0, inputLength );
+        }
+
+        RandomMemory.Add(result);
+        Debug.Log("input length: " + inputLength);
+        Debug.Log("result: " + result);
+        return result;
     }
 
     void GotText(OscMessage message)
