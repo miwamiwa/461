@@ -113,8 +113,8 @@ public class handleTexts : MonoBehaviour
 
                             if (wordIndex != -1)
                             {
-                                Material mat = sourceWordsInPhraseMat;
-                                phrasehandler.updateChars(wordIndex,words[i].Length, mat);
+                                //Material mat = sourceWordsInPhraseMat;
+                                phrasehandler.updateChars(wordIndex,words[i].Length);
                             }
                         }
                     }

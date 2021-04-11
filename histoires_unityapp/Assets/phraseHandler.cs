@@ -32,9 +32,10 @@ public class phraseHandler : MonoBehaviour
         SetText(input);
     }
 
-    public void updateChars(int startindex, int size, Material mat)
+    public void updateChars(int startindex, int size)
     {
         int endindex = startindex + size;
+        Material mat = randomcolor.GetRandomMaterial();
         for (int i=startindex; i<endindex; i++)
         {
             chars[i].GetComponent<charHandler>().updatecolor(mat);
