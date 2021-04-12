@@ -34,6 +34,7 @@ setupMarkov();
 var fs = require('fs');
 let fileIndex=[];
 let saveData = [];
+let generatedData = [];
 let importList;
 let importDone = false;
 
@@ -62,6 +63,22 @@ fs.readFile('public/out/index.txt', (error, txtString) => {
   console.log(importList);
   if(importList.length>0) importImportList();
   else importDone = true;
+});
+
+// get any generated phrases data already on file
+fs.readFile('public/out/generated.txt', (error, txtString)=>{
+  if (error){
+    console.log("no generated data!")
+    console.log("moving on anyway chief");
+    return;
+  }
+
+  let str = txtString.toString();
+  let arr= str.split('\n');
+  for(let i=0; i<arr.length; i++){
+    generatedData[i] = {phrase:arr[i]};
+  }
+
 });
 
 function importImportList(){
@@ -128,6 +145,9 @@ async function getrita(clientinput){
     console.log(r)
     // if we successfully generated something
     if(r!=undefined&&r!=false&&r!=""){
+
+      // add to list of generated words
+      saveGeneratedPhrase(r);
       // send answer back to front-end
       generatePlaySequence(r,clientinput);
 
@@ -143,6 +163,21 @@ async function getrita(clientinput){
     console.log("\nrita failed!")
     console.log(error);
     return false;
+  }
+}
+
+
+function saveGeneratedPhrase(phrase){
+  if(!generatedData.includes(phrase)){
+    generatedData.push({phrase:phrase});
+
+    let str = generatedData.join("\n");
+    fs.writeFile(
+      'public/out/generated.txt',
+      str,
+      (error) => {
+      if (error) throw error;
+    });
   }
 }
 
@@ -228,9 +263,13 @@ server2.on('message', (msg) => {
 
 // unity may also ask for random recordings to fill time
 server2.on("/randomRecordingRequest",(msg)=>{
-  let pick = Math.floor(Math.random()*fileIndex.length);
+
+
+  let pick = Math.floor(Math.random()*(fileIndex.length+generatedData.length));
   console.log("random recording request from Unity")
-  sendOSCmess("/randomRecEcho",saveData[fileIndex[pick]].phrase);
+  if(pick<fileIndex.length)
+    sendOSCmess("/randomRecEcho",saveData[fileIndex[pick]].phrase);
+  else sendOSCmess("/randomRecEcho",generatedData[pick-fileIndex.length].phrase);
 });
 
 // a function to send osc messages without worrying about syntax
@@ -293,6 +332,17 @@ io.on('connection', function (client) {
       console.log("random-recording request");
       let pick = Math.floor(Math.random()*fileIndex.length);
       console.log("the result is "+fileIndex[pick]);
+
+      /*
+//hmmmm!!!!
+      let pick = Math.floor(Math.random()*(fileIndex.length+generatedData.length));
+      console.log("random recording request from Unity")
+      if(pick<fileIndex.length)
+        sendOSCmess("/randomRecEcho",saveData[fileIndex[pick]].phrase);
+      else sendOSCmess("/randomRecEcho",generatedData[pick-fileIndex.length].phrase);
+
+      */
+
       client.emit("got-random-recording",{
         file:fileIndex[pick],
         phrase:saveData[fileIndex[pick]].phrase
