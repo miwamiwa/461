@@ -76,7 +76,7 @@ fs.readFile('public/out/generated.txt', (error, txtString)=>{
   let str = txtString.toString();
   let arr= str.split('\n');
   for(let i=0; i<arr.length; i++){
-    generatedData[i] = {phrase:arr[i]};
+    generatedData[i] = arr[i];
   }
 
 });
@@ -168,8 +168,9 @@ async function getrita(clientinput){
 
 
 function saveGeneratedPhrase(phrase){
+
   if(!generatedData.includes(phrase)){
-    generatedData.push({phrase:phrase});
+    generatedData.push(phrase);
 
     let str = generatedData.join("\n");
     fs.writeFile(
@@ -190,7 +191,7 @@ const { debug } = require('console');
 
 // For this simple test, just create wav files in the "out" directory in the directory
 // where audioserver.js lives.
-var outputDir = path.join(__dirname, "out");
+var outputDir = path.join(__dirname, "public/out");
 var dataPort = 7123; // this is the port to listen on for data from the Photon
 
 // If changing the sample frequency in the Particle code, make sure you change this!
@@ -267,9 +268,20 @@ server2.on("/randomRecordingRequest",(msg)=>{
 
   let pick = Math.floor(Math.random()*(fileIndex.length+generatedData.length));
   console.log("random recording request from Unity")
-  if(pick<fileIndex.length)
-    sendOSCmess("/randomRecEcho",saveData[fileIndex[pick]].phrase);
-  else sendOSCmess("/randomRecEcho",generatedData[pick-fileIndex.length].phrase);
+  let answer = "";
+  if(pick<fileIndex.length){
+    answer=saveData[fileIndex[pick]].phrase;
+    console.log("picked a recording")
+  }
+
+  else{
+    answer = generatedData[pick-fileIndex.length];
+    console.log("picked a generated phrase")
+
+  }
+
+  console.log("answered with: "+answer);
+  sendOSCmess("/randomRecEcho",answer);
 });
 
 // a function to send osc messages without worrying about syntax
